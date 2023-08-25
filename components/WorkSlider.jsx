@@ -38,7 +38,7 @@ const workSlides = {
         },
         {
           title: "Good News App",
-          path: "/thumbs (2).png",
+          path: "/thumb2.png",
         },
         {
           title: "Best Weather App",
@@ -54,9 +54,10 @@ const workSlides = {
 };
 
 const WorkSlider = () => {
-const {t} = useTranslation("work");
+  const { t } = useTranslation("work");
   return (
-    <Swiper dir="ltr"
+    <Swiper
+      dir="ltr"
       spaceBetween={10}
       pagination={{
         clickable: true,
@@ -71,8 +72,14 @@ const {t} = useTranslation("work");
               {slide.images.map((image, index) => (
                 <div key={index} className={style.sliderImageBox}>
                   <div className={style.sliderImage}>
-                    <Image src={image.path} width={280} height={140} alt="Projects Pic" className={style.pics}/>
-                    
+                    <Image
+                      src={image.path}
+                      width={280}
+                      height={140}
+                      alt="Projects Pic"
+                      className={style.pics}
+                    />
+
                     {/* overlay gradient */}
                     <div className={style.overlayGradient}></div>
                     {/* title */}
@@ -81,12 +88,10 @@ const {t} = useTranslation("work");
                         {/* title Part 1 */}
                         <div className={style.titlePartOne}>{t("live")}</div>
                         {/* title part 2 */}
-                        <div className={style.titlePartTwo}>
-                          {t("project")}
-                        </div>
+                        <div className={style.titlePartTwo}>{t("project")}</div>
                         {/* icon */}
                         <div className={style.icon}>
-                          <BsArrowRight/>
+                          <BsArrowRight />
                         </div>
                       </div>
                     </div>
