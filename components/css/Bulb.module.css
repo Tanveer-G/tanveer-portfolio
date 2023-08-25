@@ -1,0 +1,38 @@
+.bulb{
+    position: absolute;
+    width: 16.5rem;
+    mix-blend-mode: color-dodge;
+    z-index: 10;
+    transition-duration: 75ms; 
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    bottom: -3rem; 
+    left: -9rem; 
+    transform: rotate(0deg);
+
+}
+
+.bulbImg{
+    width: 100%;
+    height:100%;
+}
+
+/* media query start */
+/* xl screen */
+@media (min-width: 1200px) { 
+    .bulb{
+        width: 20rem;
+        left: 30.5rem;
+        bottom: -13.5rem;
+    }
+   }
+  
+
+   /* animation */
+   @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  } 

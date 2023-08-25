@@ -1,0 +1,33 @@
+.circle{
+    position:absolute;
+    right: -7rem;
+    bottom: -2rem;
+    width: 20rem;
+    mix-blend-mode: color-dodge;
+    z-index: 10;
+    transform: rotate(5deg);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    transition-duration: 75ms;
+}
+
+.circle > Image  {
+height: 100%;
+width: 100%;
+}
+/* xl */
+@media (min-width: 1200px) {
+
+    .circle{
+        width: 30rem;
+
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  }

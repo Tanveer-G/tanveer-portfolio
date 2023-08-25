@@ -1,0 +1,19 @@
+.socials{
+    display: flex;
+    align-items: center;
+    column-gap: 1.25rem;
+    font-size: 2.2rem;
+}
+
+.socialIcon{
+transition: all 300ms;
+}
+
+.socialIcon:hover{
+    color: var(--redHover);
+}
+
+.box{
+    border-top: transparent;
+    border-bottom: transparent;
+}

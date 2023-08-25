@@ -1,0 +1,16 @@
+{
+    "contactTitle": "Kontaktieren Sie mich | Erfahrener Frontend-Entwickler | Tanveer H.",
+    "contactDescription": "Kontaktieren Sie einen erfahrenen Frontend-Entwickler mit Sitz in Indien. Lassen Sie uns über Ihre Webentwicklungsbedürfnisse mit React, Next.js, CSS3 und mehr sprechen.",
+    "additionalMetaData": "Kontaktieren Sie den Frontend-Entwickler, Erfahrener React-Entwickler, Next.js-Experte, Webentwicklung mit CSS3",
+    "name": "Name",
+    "email": "E-Mail",
+    "subject": "Betreff",
+    "message": "Nachricht: Nehmen Sie Kontakt auf, um zusammenzuarbeiten, anzufragen oder einfach Hallo zu sagen.",
+    "LetsTalk": "Lass uns reden",
+    "Lets": "Lass",
+    "connect": "Verbinden.",
+    "successMessage":"Nachricht erfolgreich gesendet!",
+    "errorMessage": "Fehler beim Senden der E-Mail. Bitte versuchen Sie es später noch einmal."
+  
+  }
+  

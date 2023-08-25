@@ -1,0 +1,80 @@
+.servicesSlider {
+  height: 240px;
+}
+.swiperSlideBox {
+  display: flex;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  column-gap: 1.5rem;
+  border-radius: 0.5rem;
+  height: max-content;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-duration: 300ms;
+  cursor: pointer;
+  background: rgba(65, 47, 123, 0.15);
+}
+.swiperSlideBox:hover {
+  background-color: rgba(89, 65, 169, 0.15);
+}
+
+.icon {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: var(--textAccent);
+  margin-bottom: 1rem;
+}
+.titleParagraphBox {
+  margin-bottom: 2rem;
+}
+.title {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.paragraphDescription {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 350px;
+  line-height: 1.5;
+}
+
+.arrowBox {
+  font-size: 1.9rem;
+  line-height: 2.25rem;
+  
+}
+.arrowReactIcon{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+.swiperSlideBox:hover .arrowReactIcon {
+  transform: rotate(45deg);
+  color: var(--textAccent);
+}
+
+@media (min-width: 640px) {
+  .servicesSlider {
+    height: 340px;
+  }
+
+  .swiperSlideBox {
+    flex-direction: column;
+    column-gap: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .paragraphDescription {
+    margin-bottom: 0;
+  }
+}

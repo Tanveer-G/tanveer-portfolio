@@ -1,0 +1,46 @@
+.header {
+  position: absolute;
+  z-index: 30;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logoSocial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 0;
+  row-gap: 1rem;
+}
+
+.rightSocialMultiLang {
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+}
+
+/* xl screen */
+@media (min-width: 1200px) {
+  .header {
+    height: 9rem;
+    padding: 0 0;
+    margin-top: 1rem;
+  }
+}
+
+/* lg */
+@media (min-width: 960px) {
+  .logoSocial {
+    flex-direction: row;
+    row-gap: 4rem;
+  }
+}

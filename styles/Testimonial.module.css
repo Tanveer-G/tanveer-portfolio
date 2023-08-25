@@ -1,0 +1,45 @@
+.testimonial {
+  height: 100%;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  text-align: center;
+}
+
+.containerMiddle {
+  height: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  margin-top: 5rem;
+}
+
+.heading {
+  font-weight: 600;
+  line-height: 1.25;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+/* md screen */
+@media (min-width: 768px) {
+  .containerMiddle {
+    width: 80%;
+    margin-top: 0;
+  }
+
+  .heading {
+    font-size: 4.7rem;
+  }
+}
+@media (min-width: 1200px) {
+  .heading {
+    margin-bottom: 0;
+  }
+
+  .containerMiddle {
+    max-width: 62%;
+    margin-top: 2rem;
+  }
+}

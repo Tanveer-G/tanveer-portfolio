@@ -1,0 +1,14 @@
+{
+  "contactTitle": "Contact Me | Experienced Frontend Developer | Tanveer H.",
+  "contactDescription": "Get in touch with an experienced Frontend Developer based in India. Let's discuss your web development needs involving React, Next.js, CSS3, and more.",
+  "additionalMetaData": "Contact Frontend Developer, Experienced React Developer, Next.js Expert, CSS3 Web Development, Bangalore, Hyderabad",
+  "name": "Name",
+  "email": "Email",
+  "subject": "Subject",
+  "message": "Message: Connect with me to collaborate, inquire, or just say Hi.",
+  "LetsTalk": "Let's Talk",
+  "Lets": "Let's",
+  "connect": "Connect.",
+  "successMessage":"Message sent successfully!",
+  "errorMessage": "Error sending email. Please try again later."
+}

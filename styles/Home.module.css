@@ -1,0 +1,254 @@
+.home {
+  height: 100%;
+  text-align: center;
+  background-color: var(--bgColour);
+}
+
+.homeText {
+  width: 100%;
+  height: 100%;
+}
+
+.homeMiddleBox {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  /* border: 1px solid rgb(20, 255, 71); */
+}
+
+.welcomeLine {
+  font-size: 1.1rem;
+  letter-spacing: 0.3ch;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.heading {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.para {
+  font-size: 1.3rem;
+  letter-spacing: 0.1ch;
+  text-align: left;
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.myName {
+  color: #ff014f;
+}
+
+.btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  max-height: 5rem;
+}
+
+.rightTOLeftWelcomeLine {
+  text-align: center;
+  font-weight: 500;
+}
+
+/* @media Query ======================================================== */
+
+/* md */
+@media (min-width: 768px) {
+  .heading {
+    font-size: 4.7rem;
+  }
+  .btns {
+    margin-top: 2rem;
+    width: 100%;
+    justify-content: center;
+    column-gap: 10rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .homeMiddleBox {
+    text-align: left;
+    width: 62%;
+  }
+
+  .btns {
+    width: 50%;
+    margin-top: 0;
+  }
+
+  .welcomeLine {
+    text-align: left;
+    font-size: 1.3rem;
+  }
+
+  .rightTOLeftWelcomeLine {
+    text-align: right;
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: 0.2ch;
+  }
+
+  .para {
+    font-size: 1.45rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 960px;
+    margin-bottom: 4rem;
+  }
+}
+
+/* ===========================buttons=======================================  */
+
+/* CSS #3DD1E7 */
+.button {
+  background-color: #3dd0e7d7;
+  border: 0 solid #e5e7eb;
+  box-sizing: border-box;
+  color: #111;
+  display: flex;
+  font-size: large;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: 0.7rem 1.7rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #14141481 solid;
+  text-decoration-thickness: auto;
+  position: relative;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  border: 3px solid #111;
+  border-top-color: #fff;
+  border-right-color: #fff;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+/* md screen */
+@media (min-width: 768px) {
+  .button {
+    padding: 0.75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+.hireBtn {
+  padding: 0.7rem 1.7rem;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-weight: 500;
+  font-size: large;
+  color: white;
+}
+
+.hireBtn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff014f,
+    #ff7300,
+    /* #fffb00, */ /*  #48ff00, */ #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-hireBtn 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-hireBtn {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.hireBtn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.rightTOLeft {
+  text-align: right;
+  font-weight: 500;
+}
+
+/* RIght Section Start here=========== */
+.rightPartContainer {
+  max-width: 1200px;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

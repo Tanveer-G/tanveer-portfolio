@@ -1,0 +1,80 @@
+:root {
+  --bgColour: #0f103f;
+  --redHover: #f40612;
+  --accentRed: #f13024;
+  --textAccent: #ff014f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  color-scheme: dark light;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  color: white;
+  font-family: "Montserrat", "Times New Roman", "serif";
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bgColour);
+  font-size: 1.6rem;
+  line-height: 1.625;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+/* my global */
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  background-color: var(--textAccent);
+}
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  color: var(--textAccent);
+}
+/* not use */
+h2 {
+  font-weight: 600;
+}
+
+.text-accent {
+  color: var(--textAccent);
+}
+.h-full{
+  height: 100%;
+}
+/* screens: {
+  sm: '640px',
+  md: '768px',
+  lg: '960px',
+  xl: '1200px',
+} */

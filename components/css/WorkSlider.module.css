@@ -1,0 +1,125 @@
+.workSlider {
+  /* height: 2.4rem; */
+  height: 240px;
+}
+.swiperSliderGridBox {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  cursor: pointer;
+}
+.sliderImageBox {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.sliderImage {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+
+}
+.pics{
+  max-width: 400px;
+
+  width: 400px;
+  height: fit-content;
+  min-width: 15rem;
+  min-height: 10rem;
+  max-height: 150px;
+}
+.overlayGradient {
+  position: absolute; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; 
+  background-color: transparent; 
+  background-image: linear-gradient(to left, transparent, #e838cc , #4a22bd);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms; 
+  opacity: 0; 
+}
+
+.sliderImage:hover .overlayGradient {
+  opacity: 0.65;
+}
+
+.titleBox {
+  position: absolute;
+  bottom: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transform: translateY(100%);
+  font-weight: 500;
+
+}
+
+ .sliderImage:hover .titleBox {
+  transform: translateY(-5rem);
+
+}
+
+.allTitle {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}
+.titlePartOne {
+  transition-delay: 100ms;
+}
+
+.titlePartTwo {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-delay: 150ms;
+  transform: translateY(300%);
+
+}
+.sliderImage:hover .titlePartTwo {
+  transform: translateY(0);
+}
+
+.icon {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-delay: 200ms;
+  transform: translateY(500%);
+
+}
+
+.sliderImage:hover .icon {
+  transform: translateY(0);
+}
+
+/* medua query ======================================================= */
+@media (min-width: 640px) {
+  .workSlider {
+    height: 340px;
+  }
+
+
+}
+/* xl large screen============ */
+@media (min-width: 1200px) {
+  /* .sliderImage:hover .titleBox {
+    transform: translateY(5rem);
+  } */
+  
+}
