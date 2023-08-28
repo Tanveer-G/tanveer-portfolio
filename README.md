@@ -52,9 +52,7 @@ Feel free to explore the app and learn more about my projects and skills. If you
 
 If you have any questions or feedback about the app, you can reach out to me:
 
-- Email: [My Email](mailto:youremail@email.com)
-- LinkedIn: [My LinkedIn Profile](https://www.linkedin.com/in/myprofile/)
-- Website: [My Portfolio Website](https://www.tanveer-portfolio.com/)
+- Website: [My Portfolio Website](https://tanveer-portfolio.vercel.app/en-US)
 
 ---
 
