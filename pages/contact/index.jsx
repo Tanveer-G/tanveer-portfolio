@@ -4,7 +4,7 @@ import { BiMessageError, BiMessageCheck } from "react-icons/bi";
 import emailjs from "@emailjs/browser";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsLock } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/variants";
 import style from "@/styles/Contact.module.css";
@@ -19,6 +19,15 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(false);
+  let isDisableButton = false;
+  if (
+    name.length >= 3 &&
+    email.match(/[^@]+@[^@]+\.[a-zA-Z]{2,6}/) &&
+    subject.length >= 3 &&
+    message.length >= 3
+  ) {
+    isDisableButton = true;
+  }
 
   useEffect(() => {
     if (sent || error) {
@@ -98,7 +107,7 @@ const Contact = () => {
         <div className={style.contactContainer}>
           {/* text & form */}
           <div>
-            {/* text */}
+            {/* heading text */}
             <motion.h2
               className={style.heading}
               variants={fadeIn("up", 0.2)}
@@ -119,54 +128,93 @@ const Contact = () => {
             >
               {/* group */}
               <div className={style.inputGroup}>
-                <input
-                  type="text"
-                  placeholder={t("name")}
-                  className={style.input}
-                  value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                />
+                <div className={style.inputWrapper}>
+                  <input
+                    required
+                    type="text"
+                    minlength="3"
+                    maxlength="60"
+                    placeholder={t("name") + "*"}
+                    className={style.input}
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                  />
+                  {name.length >= 3 && (
+                    <span className={style.tickInput}>&#10004;</span>
+                  )}
+                </div>
+                <div className={style.inputWrapper}>
+                  <input
+                    required
+                    type="email"
+                    placeholder={t("email") + "*"}
+                    value={email}
+                    pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                    maxlength="60"
+                    className={style.input}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                  />
 
-                <input
-                  type="text"
-                  placeholder={t("email")}
-                  value={email}
-                  className={style.input}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
+                  {email.match(/[^@]+@[^@]+\.[a-zA-Z]{2,6}/) && (
+                    <span className={style.tickInput}>&#10004;</span>
+                  )}
+                </div>
               </div>
 
-              <input
-                type="text"
-                placeholder={t("subject")}
-                className={style.input}
-                value={subject}
-                onChange={(e) => {
-                  setSubject(e.target.value);
-                }}
-              />
-              <textarea
-                placeholder={t("message")}
-                className={style.textArea}
-                value={message}
-                onChange={(e) => {
-                  setMessage(e.target.value);
-                }}
-              ></textarea>
+              <div className={style.inputWrapper}>
+                <input
+                  required
+                  type="text"
+                  minlength="3"
+                  placeholder={t("subject") + "*"}
+                  className={style.input}
+                  value={subject}
+                  onChange={(e) => {
+                    setSubject(e.target.value);
+                  }}
+                />
+                {subject.length >= 3 && (
+                  <span className={style.tickInput}>&#10004;</span>
+                )}
+              </div>
 
+              <div className={style.textAreaWrapper}>
+                <textarea
+                  type="text"
+                  placeholder={t("message") + "*"}
+                  className={style.textArea}
+                  value={message}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                  }}
+                  minlength="3"
+                  required
+                />
+                {message.length >= 3 && (
+                  <span className={style.tickTextArea}>&#10004;</span>
+                )}
+              </div>
+
+              {/* button */}
               <button
+                className={style.sendEmailButton}
                 onClick={(e) => handleSubmit(e)}
                 value="Send"
-                className={style.btn}
+                disabled={isDisableButton ? "" : "disabled"}
               >
                 <span className={style.talk}>{t("LetsTalk")}</span>
-                <BsArrowRight className={style.arrow} />
+                {isDisableButton ? (
+                  <BsArrowRight className={style.arrow} />
+                ) : (
+                  <BsLock className={style.arrow} />
+                )}
               </button>
             </motion.form>
+
             {sent && (
               <motion.div
                 className={style.messageBox}
@@ -175,7 +223,10 @@ const Contact = () => {
                 animate="show"
                 exit="hidden"
               >
-                <BiMessageCheck className={style.successMessageIcon} />
+                <BiMessageCheck
+                  className={style.successMessageIcon}
+                  aria-label="Success Message"
+                />
 
                 <p className={`${style.successMessageColor}`}>
                   {t("successMessage")}
@@ -190,7 +241,10 @@ const Contact = () => {
                 animate="show"
                 exit="hidden"
               >
-                <BiMessageError className={style.errorMessageIcon} />
+                <BiMessageError
+                  className={style.errorMessageIcon}
+                  aria-label="Error Message"
+                />
 
                 <p className={`${style.errorMessageColor}`}>
                   {t("errorMessage")}
