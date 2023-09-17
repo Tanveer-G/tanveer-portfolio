@@ -2,7 +2,7 @@
     position:absolute;
     right: -7rem;
     bottom: -2rem;
-    width: 20rem;
+    width: 18rem;
     mix-blend-mode: color-dodge;
     z-index: 10;
     transform: rotate(5deg);
@@ -14,12 +14,11 @@
 height: 100%;
 width: 100%;
 }
-/* xl */
-@media (min-width: 1200px) {
+
+@media (min-width: 768px) {
 
     .circle{
-        width: 30rem;
-
+        width: 25rem;
     }
   }
 
@@ -28,6 +27,6 @@ width: 100%;
       opacity: 1;
     }
     50% {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
