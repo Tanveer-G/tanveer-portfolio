@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -6,27 +7,26 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { BsArrowRight } from "react-icons/bs";
 import style from "./css/WorkSlider.module.css";
-import Image from "next/image";
-// data
+
 const workSlides = {
   slides: [
     {
       images: [
         {
           title: "Netflix Clone",
-          path: "/thumb1.png",
+          path: "/pj1-r1-c1.jpg",
         },
         {
           title: "Good News App",
-          path: "/thumb2.png",
+          path: "/pj2-r1-c2.jpg",
         },
         {
           title: "Best Weather App",
-          path: "/thumb6.png",
+          path: "/pj3-r2-c1.jpg",
         },
         {
           title: "Grocery Shop UI",
-          path: "/thumb5.png",
+          path: "/pj4-r2-c2.jpg",
         },
       ],
     },
@@ -34,15 +34,15 @@ const workSlides = {
       images: [
         {
           title: "Netflix clone",
-          path: "/thumb11.png",
+          path: "/pj5-r1-c1.jpg",
         },
         {
-          title: "Good News App",
-          path: "/thumb2.png",
+          title: "Google Home UI",
+          path: "/pj6-r1-c2.jpg",
         },
         {
           title: "Best Weather App",
-          path: "/thumb33.png",
+          path: "/pj7-r2-c1.jpg",
         },
         {
           title: "Tanveer portfolio",
