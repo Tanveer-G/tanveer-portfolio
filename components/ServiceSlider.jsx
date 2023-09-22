@@ -1,11 +1,12 @@
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import {
-  RxMix,
   RxCrop,
   RxDesktop,
   RxPencil2,
@@ -20,6 +21,7 @@ import style from "./css/ServicesSlider.module.css";
 
 const ServiceSlider = () => {
   const { t } = useTranslation("services");
+  const locale = useRouter().locale;
 
   const serviceData = [
     {
@@ -31,6 +33,16 @@ const ServiceSlider = () => {
       icon: <RxRocket />,
       title: t("serviceTitleSEO"),
       description: t("serviceDescSEO"),
+    },
+    {
+      icon: <RxMobile />,
+      title: t("serviceTitleResponsiveDesign"),
+      description: t("serviceDescResponsiveDesign"),
+    },
+    {
+      icon: <RxGear />,
+      title: t("serviceTitleFrontendOptimization"),
+      description: t("serviceDescFrontendOptimization"),
     },
     {
       icon: <RxCrop />,
@@ -48,24 +60,9 @@ const ServiceSlider = () => {
       description: t("serviceDescConsultation"),
     },
     {
-      icon: <RxMix />,
-      title: t("serviceTitleTeacher"),
-      description: t("serviceDescTeacher"),
-    },
-    {
-      icon: <RxMobile />,
-      title: t("serviceTitleResponsiveDesign"),
-      description: t("serviceDescResponsiveDesign"),
-    },
-    {
       icon: <RxFontBold />,
       title: t("ServiceECommerceSolutions"),
       description: t("serviceDescECommerceSolutions"),
-    },
-    {
-      icon: <RxGear />,
-      title: t("serviceTitleFrontendOptimization"),
-      description: t("serviceDescFrontendOptimization"),
     },
   ];
 
@@ -92,7 +89,7 @@ const ServiceSlider = () => {
       {serviceData.map((item, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className={style.swiperSlideBox}>
+            <Link href={`/${locale}/contact`} className={style.swiperSlideBox}>
               {/* icon */}
               <div className={style.icon}>{item.icon}</div>
               {/* title & description*/}
@@ -104,7 +101,7 @@ const ServiceSlider = () => {
               <div className={style.arrowBox}>
                 <RxArrowTopRight className={style.arrowReactIcon} />
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         );
       })}
