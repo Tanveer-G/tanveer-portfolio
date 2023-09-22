@@ -10,7 +10,6 @@ import {
   FaCss3,
   FaJs,
   FaReact,
-  // FaWordpress,
   FaFigma,
 } from "react-icons/fa";
 
@@ -19,7 +18,15 @@ import {
   SiTailwindcss,
   SiAdobephotoshop,
   SiI18Next,
+  SiReactrouter,
+  SiRedux,
+  SiWebpack,
 } from "react-icons/si";
+
+import {
+  TbBrandGit,
+  TbBrandVscode,
+} from "react-icons/tb";
 
 import style from "@/styles/About.module.css";
 
@@ -27,7 +34,6 @@ const About = () => {
   const [index, setIndex] = useState(0);
   const { t: t } = useTranslation("about");
   const { t: commonT } = useTranslation("common");
-
 
   const aboutData = [
     {
@@ -42,21 +48,31 @@ const About = () => {
             <FaReact key="FaReact" />,
             <SiNextdotjs key="SiNextdotjs" />,
             <SiTailwindcss key="SiTailwindcss" />,
-            <SiI18Next key="SiI18Next"/>
+            <SiI18Next key="SiI18Next"/>,
+            <SiReactrouter key="SiReactrouter"/>,
+            <SiRedux key="SiRedux"/>,
+            <SiWebpack key="SiWebpack" />
+
           ],
         },
         {
-          title: t("uiUxDesign"),
+          title: t("tool"),
           icons: [
             <FaFigma key="FaFigma" />,
             <SiAdobephotoshop key="SiAdobephotoshop" />,
+            <TbBrandGit key="TbBrandGit" />,
+            <TbBrandVscode key="TbBrandVscode" />,
           ],
         },
         {
-          title: "Programming Language",
+          title: t("programmingLanguages"),
           icons: [
             "C, C++, Java",
           ],
+        },
+        {
+          title: t("spokenLanguages"),
+          icons: [t("languagesName")],
         },
         
       ],
@@ -65,10 +81,12 @@ const About = () => {
       title: t("credentials"),
       info: [
         {
-          title: `${t("computerScienceDegree")} - Aligarh Muslim ${t(
-            "university"
-          )}, Aligarh - ${t("india")}`,
-          stage: "2023",
+          title: `${t("degreeUG.name")} ${t("degreeUG.university")}, ${t("degreeUG.city")} - ${t("degreeUG.country")}`,
+          stage: `2020-2023 ${t("degreeUG.division")}`,
+        },
+        {
+          title:`• ${t("degreeUG.subjectsNameList.0")} • ${t("degreeUG.subjectsNameList.1")} • ${t("degreeUG.subjectsNameList.2")} • ${t("degreeUG.subjectsNameList.3")} • ${t("degreeUG.subjectsNameList.4")} • ${t("degreeUG.subjectsNameList.5")}`,
+          stage: `${t("degreeUG.majorSubjects")}`,
         },
       ],
     },
@@ -77,16 +95,16 @@ const About = () => {
       title: t("experience"),
       info: [
         {
-          title: "Private Tutor of CBSE & ICSE Board",
-          stage: "2019 - 2023",
+          title: t("selfLearningExperienceList.0"),
+          stage: "2023",
         },
         {
-          title: "Web Development learning & building Projects for self",
-          stage: "2022 - 2023",
+          title: t("selfLearningExperienceList.1"),
+          stage: "2021",
         },
         {
-          title: "DSA - Question Practice on GfG & CodeChef",
-          stage: "2021 - 2022",
+          title: t("selfLearningExperienceList.2"),
+          stage: "2020  2021",
         },
       ],
     },
@@ -94,13 +112,13 @@ const About = () => {
       title: t("awards"),
       info: [
         {
-          title:
-            "Appreciation Certificate & 15000 Rupees - Jahangirabad Institute of Technology Exam",
+          title: t("awardList.0"),
           stage: "2016",
         },
       ],
     },
   ];
+  
   return (
     <>
        <NextSeo
@@ -133,18 +151,18 @@ const About = () => {
     <div className={style.about}>
       {/* My pic or Avtar */}
       <div className={style.aboutContainer}>
-        {/* Text */}
+        {/* Heading Text */}
         <div className={style.bigTextBox}>
           <motion.h2
             className={style.heading}
             variants={fadeIn("right", 0.2)}
             initial="hidden"
-            animate="show"
+            animate="show"  
             exit="hidden"
           >
-            {t("aboutHeading")}
-            <span className="text-accent"> {t("aboutHeadingRed")} </span>
-            {t("today")}
+            {t("aboutHeading.0")}
+            <span className="text-accent"> {t("aboutHeading.1")} </span>
+            {t("aboutHeading.2")}
           </motion.h2>
 
           <motion.p
@@ -165,7 +183,7 @@ const About = () => {
                 className={`${style.counterBoxContent} ${style.straightLine}`}
               >
                 <div className={style.counterBigText}>
-                  <CountUp start={0} end={16} duration={5} />+
+                  <CountUp start={0} end={15} duration={5} />+
                 </div>
                 <div className={style.counterSmallText}>
                   {t("yearOfExperience")}
@@ -177,7 +195,7 @@ const About = () => {
                 className={`${style.counterBoxContent} ${style.straightLine}`}
               >
                 <div className={style.counterBigText}>
-                  <CountUp start={0} end={7} duration={5} />+
+                  <CountUp start={0} end={1} duration={2} />+
                 </div>
                 <div className={style.counterSmallText}>
                   {t("satisfiedClients")}
@@ -192,13 +210,13 @@ const About = () => {
                   <CountUp start={0} end={10} duration={5} />+
                 </div>
                 <div className={style.counterSmallText}>
-                  {t("finishedProjects")}
+                  {t("completedProjects")}
                 </div>
               </div>
 
               <div className={`${style.counterBoxContent}`}>
                 <div className={style.counterBigText}>
-                  <CountUp start={0} end={1} duration={5} />+
+                  <CountUp start={0} end={1} duration={2} />+
                 </div>
                 <div className={style.counterSmallText}>
                   {t("winningAwards")}
