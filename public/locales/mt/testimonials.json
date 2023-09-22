@@ -1,18 +1,19 @@
 {
-    "testimonialTitle": "Testimonjanzi tal-Klijenti | Tanveer H. | Żviluppatur Frontend",
-    "testimonialDescription": "Skopri x-qed jgħidu l-klijenti dwar l-espertiza tiegħi bħala Żviluppatur Frontend u Edukatur. Niggarantix dejjem is-sodisfazzjon tal-klijenti.",
-    "additionalMetaData": "Testimonjanzi tal-Klijenti, Żviluppatur Frontend, Ulasan React, Reviżjonijiet Next.js, Riflessi CSS3",
-    "testimonialHeading": "X'qed l-Klijenti",
-    "say": "jgħidu.",
-    "clientNameOne": "Alif F. Kalam",
-    "clientNameTwo": "Miss McCarthy",
+    "testimonialTitle": "Testimonjali | Tanveer H. | Żviluppatur Frontend",
+    "testimonialDescription": "Skopri x'qalbna klijenti dwar l-għarfien tiegħi bħala Żviluppatur Frontend u Edukatur. Għandni dejjem prijorità fil-kuntentizza tal-klijenti.",
+    "additionalMetaData": "Testimonjali, Żviluppatur Frontend, Testimonjali React, Revisti Next.js, Feedback CSS",
+    "testimonialHeading": "Klijenti",
+    "say": "qal.",
+    "clientNameOne": "Mary Shelley",
+    "clientNameTwo": "Miss Lucy",
     "clientNameThree": "Jacob M. Joseph",
-    "clientDesignationParent": "Ġenitur",
+    "client": "klijent",
     "clientDesignationCustomer": "Klijent",
-    "clientDesignationStudent": "Student",
-    "clientDesignationHR": "Kap Manager",
-    "clientDesignationPrinciple": "Primarju",
-    "clientWordsParaOne": "Dedikazzjoni u espertiza ta' Tanveer fil-żvilupp frontend huma verament lodevoli. Stilu tiegħu fl-insegnament huwa eċċezzjonali, jagħmel konċetti kompliċi faċli għall-komprin.",
-    "clientWordsParaTwo": "Intlaħħaqt minn kreattività u soluzzjoni ta' problemi ta' Tanveer bħala żviluppatur frontend. Il-proġetti tiegħu jirriflettu l-impenju tiegħu biex joffri esperjenzi ta' utent eċċellenti.",
-    "clientWordsParaThree": "Bħala student, it-taħriġ milli Tanveer kellu impatt kbir fuq ħajti. Id-direzzjoni tiegħu u l-viżjonijiet tal-ħajja reali ħabtu biex intgħallimni sew għal karriera fil-iżvilupp tal-web."
-}
+    "clientDesignationHR": "Mudell ta' L-Istess",
+    "clientWordsParaOne": "L-ekspertiza ta 'Tanveer fid-difiż tal-web verament impressjonatni. Huwa beda sitna fl-immaġni visualment mgħammra u għażla lill-utenti. Jirrikkomanda b 'mod konsiderevoli is-servizzi tiegħu.",
+    "clientWordsParaTwo": "L-abbiltà ta 'Tanveer biex ibaqa 'idejna f'rialtà, kienet straordinarja. Kontinwament impressjonajna b 'il-ħiliet tiegħu fi t-tkomunikazzjoni u s-soluzzjoni tal-problemi.",
+    "clientWordsParaThree": "Tanveer mhijiex biss żviluppatur; huwa artista diġitali. Għandna kbira għall-iżviluppi u naraw b 'xi tama x-xogħol fl-avvenire.",
+    "note": "Nota",
+    "notReal": "MHUX REALI"
+  }
+  

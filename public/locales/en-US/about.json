@@ -1,22 +1,44 @@
 {
   "aboutTitle": "About Tanveer - Skilled Frontend Developer",
-  "aboutDescription": "Get to know an accomplished Frontend Developer based. I specialize in React, Next.js, CSS3, and more. Let's create innovative digital solutions.",
-  "additionalMetaData": "Frontend Developer, React Specialist, Next.js Developer, CSS3 Expert, Portfolio",
-  "aboutHeading": "Crafting Tomorrow's ",
-  "aboutHeadingRed": "Digital Experiences",
+  "aboutDescription": "Get to know an accomplished Frontend Developer based. I specialize in React, Next.js, CSS, and more. Let's create innovative digital solutions.",
+  "additionalMetaData": "Frontend Developer, React Specialist, Next.js Developer, CSS Expert, Portfolio",
+  "aboutHeading": ["Crafting Tomorrow's", "Digital Experiences", "Today."],
   "aboutParagraph": "Learn more about the creative mind behind the pixels, the journey that led me here, and the passion that fuels my work.",
-  "finishedProjects": "Finished Projects",
-  "satisfiedClients": "Satisfied Clients",
+  "completedProjects": "Completed Projects",
+  "satisfiedClients": "Happy Clients",
   "winningAwards": "Winning Awards",
   "yearOfExperience": "Months of Experience",
   "skills": "Skills",
-  "credentials": "Credentials",
-  "experience": "Experience",
-  "awards": "Awards",
   "webDevelopment": "Web Development",
-  "uiUxDesign": "UI/UX Design",
-  "computerScienceDegree": "Computer Science Degree",
-  "university": "University",
-  "india": "India",
-  "today":"Today."
+  "tool": "Tools",
+  "programmingLanguages": "Programming Languages",
+  "spokenLanguages": "Spoken Languages",
+  "languagesName": "English, Hindi, Urdu, Arabic (only reading & few words)",
+  "credentials": "Credentials",
+  "degreeUG": {
+    "name": "B.Sc. in Computer Science (Honours)",
+    "university": "Aligarh Muslim University",
+    "country": "India",
+    "city": "Aligarh",
+    "division": "1st division",
+    "majorSubjects": "Major Subjects",
+    "subjectsNameList": [
+      "Computer Architecture",
+      "Operating System",
+      "Data Structure & Algorithm",
+      "Advanced Mathematics",
+      "Statistics",
+      "Report Writing"
+    ]
+  },
+  "experience": "Experience",
+  "selfLearningExperienceList": [
+    "Freelancing on various platforms: UpWork.com",
+    "Web Development learning & building Projects for self",
+    "Data Structure & Algorithm questions practice on GfG & CodeChef websites"
+  ],
+  "awards": "Awards",
+  "awardList": [
+    "I got a 15000 rupees reward and appreciation certificate from JIT, Lucknow for getting 1st rank in their aptitude test"
+  ]
 }

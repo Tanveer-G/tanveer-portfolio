@@ -1,23 +1,44 @@
 {
-    "aboutTitle": "Tentang Tanveer H. - Pembangun Frontend Mahir",
-    "aboutDescription": "Kenali Pembangun Frontend yang mahir. Saya pakar dalam React, Next.js, CSS3, dan banyak lagi. Mari kita cipta penyelesaian digital inovatif.",
-    "additionalMetaData": "Pembangun Frontend, Pakar React, Pembangun Next.js, Pakar CSS3, Portfoliu",
-    "aboutHeading": "Mewujudkan Pengalaman Digital ",
-    "aboutHeadingRed": "Esok",
-    "aboutParagraph": "Ketahui lebih lanjut tentang minda kreatif di sebalik piksel, perjalanan yang membawa saya ke sini, dan semangat yang menghidupkan kerja saya.",
-    "finishedProjects": "Projek Selesai",
-    "satisfiedClients": "Pelanggan Puas Hati",
-    "winningAwards": "Anugerah Kemenangan",
-    "yearOfExperience": "Bulan Pengalaman",
-    "skills": "Kemahiran",
-    "credentials": "Kelayakan",
-    "experience": "Pengalaman",
-    "awards": "Anugerah",
-    "webDevelopment":"Pembangunan Web",
-    "uiUxDesign":"Reka Bentuk Antara Muka Pengguna (UI/UX)",
-    "computerScienceDegree":"Ijazah Sains Komputer",
-    "university":"universiti",
-    "india":"India",
-    "today":"Hari Ini."
-  }
-  
+  "aboutTitle": "Mengenai Tanveer - Pembangun Frontend Mahir",
+  "aboutDescription": "Kenali Pembangun Frontend berprestasi yang berpangkalan. Saya pakar dalam React, Next.js, CSS, dan banyak lagi. Mari cipta penyelesaian digital yang inovatif.",
+  "additionalMetaData": "Pembangun Frontend, Pakar React, Pembangun Next.js, Pakar CSS, Portfolio",
+  "aboutHeading": ["Mencipta", "Pengalaman Digital Esok", "Hari Ini."],
+  "aboutParagraph": "Ketahui lebih lanjut tentang pemikiran kreatif di sebalik piksel, perjalanan yang membawa saya ke sini, dan semangat yang menggerakkan kerja saya.",
+  "completedProjects": "Projek Selesai",
+  "satisfiedClients": "Pelanggan Gembira",
+  "winningAwards": "Memenangi Anugerah",
+  "yearOfExperience": "Bulan Pengalaman",
+  "skills": "Kemahiran",
+  "webDevelopment": "Pembangunan Web",
+  "tool": "Alat",
+  "programmingLanguages": "Bahasa Pengaturcaraan",
+  "spokenLanguages": "Bahasa Lisan",
+  "languagesName": "Bahasa Inggeris, Bahasa Hindi, Bahasa Urdu, Bahasa Arab (hanya membaca & beberapa perkataan)",
+  "credentials": "Kelayakan",
+  "degreeUG": {
+    "name": "B.Sc. dalam Sains Komputer (Kehormatan)",
+    "university": "Aligarh Muslim University",
+    "country": "India",
+    "city": "Aligarh",
+    "division": "1. Bahagian",
+    "majorSubjects": "Mata Pelajaran Utama",
+    "subjectsNameList": [
+      "Seni Bina Komputer",
+      "Sistem Pengendalian",
+      "Struktur Data & Algoritma",
+      "Matematik Lanjutan",
+      "Statistik",
+      "Penulisan Laporan"
+    ]
+  },
+  "experience": "Pengalaman",
+  "selfLearningExperienceList": [
+    "Pekerja bebas di pelbagai platform: UpWork.com",
+    "Pembelajaran Pembangunan Web & Membina Projek Sendiri",
+    "Latihan Soalan Struktur Data & Algoritma di GfG & Laman web CodeChef"
+  ],
+  "awards": "Anugerah",
+  "awardList": [
+    "Saya menerima ganjaran 15,000 rupee dan sijil penghargaan dari JIT, Lucknow kerana mendapat tempat pertama dalam ujian kebolehan mereka"
+  ]
+}
