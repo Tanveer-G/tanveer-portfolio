@@ -1,22 +1,44 @@
 {
-  "aboutTitle": "Über Tanveer H. - Erfahrener Frontend-Entwickler",
-  "aboutDescription": "Lerne einen erfahrenen Frontend-Entwickler kennen. Ich bin spezialisiert auf React, Next.js, CSS3 und mehr. Lass uns innovative digitale Lösungen erstellen.",
-  "additionalMetaData": "Frontend-Entwickler, React-Spezialist, Next.js-Entwickler, CSS3-Experte, Portfolio",
-  "aboutHeading": "Gestaltung der digitalen ",
-  "aboutHeadingRed": "Erfahrungen von Morgen",
-  "aboutParagraph": "Erfahre mehr über den kreativen Geist hinter den Pixeln, die Reise, die mich hierher geführt hat, und die Leidenschaft, die meine Arbeit antreibt.",
-  "finishedProjects": "Abgeschlossene Projekte",
+  "aboutTitle": "Über Tanveer - Erfahrener Frontend-Entwickler",
+  "aboutDescription": "Lernen Sie einen erfahrenen Frontend-Entwickler kennen. Ich bin spezialisiert auf React, Next.js, CSS und mehr. Lassen Sie uns innovative digitale Lösungen schaffen.",
+  "additionalMetaData": "Frontend-Entwickler, React-Spezialist, Next.js-Entwickler, CSS-Experte, Portfolio",
+  "aboutHeading": ["Gestalten Sie morgen", "digitale Erfahrungen", "heute."],
+  "aboutParagraph": "Erfahren Sie mehr über den kreativen Kopf hinter den Pixeln, die Reise, die mich hierher geführt hat, und die Leidenschaft, die meine Arbeit antreibt.",
+  "completedProjects": "Abgeschlossene Projekte",
   "satisfiedClients": "Zufriedene Kunden",
   "winningAwards": "Gewonnene Auszeichnungen",
   "yearOfExperience": "Monate Erfahrung",
   "skills": "Fähigkeiten",
-  "credentials": "Qualifikationen",
-  "experience": "Erfahrung",
-  "awards": "Auszeichnungen",
   "webDevelopment": "Webentwicklung",
-  "uiUxDesign": "UI/UX-Design",
-  "computerScienceDegree": "Informatikstudium",
-  "university": "Universität",
-  "india": "Indien",
-  "today": "Heute."
+  "tool": "Werkzeuge",
+  "programmingLanguages": "Programmiersprachen",
+  "spokenLanguages": "Gesprochene Sprachen",
+  "languagesName": "Englisch, Hindi, Urdu, Arabisch (nur Lesen & einige Wörter)",
+  "credentials": "Qualifikationen",
+  "degreeUG": {
+    "name": "B.Sc. in Informatik (mit Auszeichnung)",
+    "university": "Aligarh Muslim University",
+    "country": "Indien",
+    "city": "Aligarh",
+    "division": "1. Division",
+    "majorSubjects": "Hauptfächer",
+    "subjectsNameList": [
+      "Computerarchitektur",
+      "Betriebssystem",
+      "Datenstrukturen & Algorithmen",
+      "Fortgeschrittene Mathematik",
+      "Statistik",
+      "Berichterstellung"
+    ]
+  },
+  "experience": "Erlebnis",
+  "selfLearningExperienceList": [
+    "Freiberuflich auf verschiedenen Plattformen tätig: UpWork.com",
+    "Selbstlernen von Webentwicklung und Projekterstellung",
+    "Übung von Fragen zu Datenstrukturen und Algorithmen auf GfG und CodeChef-Websites"
+  ],
+  "awards": "Ehrungen",
+  "awardList": [
+    "Ich habe eine Belohnung von 15.000 Rupien und eine Anerkennungsurkunde von JIT, Lucknow, für den ersten Platz in ihrem Eignungstest erhalten"
+  ]
 }

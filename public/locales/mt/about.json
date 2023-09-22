@@ -1,23 +1,44 @@
 {
-  "aboutTitle": "Dwar Tanveer H. - Sviluppatur Frontend Talentuż",
-  "aboutDescription": "Aħjar magħruf bħala Sviluppatur Frontend talentuż. Jiena speċjalizzat f'React, Next.js, CSS3, u aktar. Ejja nħarbu soluzzjonijiet diġitali innovattivi.",
-  "additionalMetaData": "Sviluppatur Frontend, Specialistu React, Sviluppatur Next.js, Eżpertu CSS3, Portfolju",
-  "aboutHeading": "Tieħu Pjak Digitali ",
-  "aboutHeadingRed": "Għada",
-  "aboutParagraph": "Ikkanċella aktar dwar l-menti kreattiv wara l-pixel, ir-riħa li għadni hawn hemm, u l-passjoni li tgħodd l-ħidma tiegħi.",
-  "finishedProjects": "Proġetti Finuti",
-  "satisfiedClients": "Klijenti Sodisfatti",
-  "winningAwards": "Premji Għall-Kisba",
+  "aboutTitle": "Dwar Tanveer - Żviluppatur Frontend Tajjeb",
+  "aboutDescription": "Taf lil żviluppatur frontend ta' suċċess bbażat. Speċjalizzat f'React, Next.js, CSS, u aktar. Ejja nitkrexu soluzzjonijiet diġitali innovattivi.",
+  "additionalMetaData": "Żviluppatur Frontend, Speċjalista React, Żviluppatur Next.js, Espert CSS, Portfolio",
+  "aboutHeading": ["Ibni", "Esperjenzi Digitali tat-Tomorrow", "Illum."],
+  "aboutParagraph": "Igħallem aktar dwar l-ment tal-kreatività wara l-pixel, it-tlugħ ta' din il-vjaġġ li għadni hawn, u l-passjoni li tgħaqqad x-xogħol tiegħi.",
+  "completedProjects": "Proġetti Kompluti",
+  "satisfiedClients": "Klijenti Kontenti",
+  "winningAwards": "Premji ta' Suċċess",
   "yearOfExperience": "Xhur ta' Esperjenza",
   "skills": "Ħiliet",
+  "webDevelopment": "Żvilupp tal-Web",
+  "tool": "Għodod",
+  "programmingLanguages": "Lingwi ta' Programmazzjoni",
+  "spokenLanguages": "Lingwi Mitkellem",
+  "languagesName": "Bl-Ingliz, l-Ħindi, l-Urdù, l-Arabi (biss qari & kelma jew tnejn)",
   "credentials": "Kredenzjali",
+  "degreeUG": {
+    "name": "B.Sc. f'Ilma Kompjuter (Magna Cum Laude)",
+    "university": "Aligarh Musulmani Università",
+    "country": "Indja",
+    "city": "Aligarh",
+    "division": "1. Diviżjoni",
+    "majorSubjects": "Suġġetti ewlenin",
+    "subjectsNameList": [
+      "Arkitettura tal-Kompjuter",
+      "Sistema ta' Operazzjoni",
+      "Struttura tad-Data u l-Algoritmi",
+      "Matematika Avvanzata",
+      "Statistika",
+      "Kitba tal-Report"
+    ]
+  },
   "experience": "Esperjenza",
+  "selfLearningExperienceList": [
+    "Freelancing fuq diversi pjattaformi: UpWork.com",
+    "Talba ta' Żvilupp tal-Web u bini ta' Proġetti għall-inqas",
+    "Prattika ta' Mistoqsijiet dwar Struttura tad-Data u l-Algoritmi fuq is-siti GfG u CodeChef"
+  ],
   "awards": "Premji",
-  "webDevelopment": "Svilupp tal-Web",
-  "uiUxDesign": "Dizjnu tal-Interfaċċa tal-Utent (UI/UX)",
-  "computerScienceDegree": "grad fix-xjenza tal-kompjuter",
-  "university": "università",
-  "india": "L-Indja",
-  "today":"Illum."
-
+  "awardList": [
+    "Rċevejt għożża ta' 15,000 rupija u ċertifikat ta' apprezzament mill-JIT, Lucknow, għall-ewwel post fil-test ta' awtudità tagħhom"
+  ]
 }

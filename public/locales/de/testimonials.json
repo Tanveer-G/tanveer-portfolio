@@ -1,18 +1,19 @@
 {
-    "testimonialTitle": "Kundenbewertungen | Tanveer H. | Frontend-Entwickler",
-    "testimonialDescription": "Entdecken Sie, was Kunden über meine Expertise als Frontend-Entwickler & Lehrer sagen. Ich setze stets die Zufriedenheit der Kunden an erste Stelle.",
-    "additionalMetaData": "Kundenbewertungen, Frontend-Entwickler, React-Bewertungen, Next.js-Reviews, CSS3-Feedback",
-    "testimonialHeading": "Was Kunden",
+    "testimonialTitle": "Referenzen | Tanveer H. | Frontend-Entwickler",
+    "testimonialDescription": "Erfahren Sie, was Kunden über meine Expertise als Frontend-Entwickler und Lehrer sagen. Die Zufriedenheit der Kunden hat für mich immer oberste Priorität.",
+    "additionalMetaData": "Referenzen, Frontend-Entwickler, React-Referenzen, Next.js-Bewertungen, CSS-Feedback",
+    "testimonialHeading": "Kunden",
     "say": "sagen.",
-    "clientNameOne": "Alif F. Kalam",
-    "clientNameTwo": "Miss McCarthy",
+    "clientNameOne": "Mary Shelley",
+    "clientNameTwo": "Frau Lucy",
     "clientNameThree": "Jacob M. Joseph",
-    "clientDesignationParent": "Elternteil",
+    "client": "Kunde",
     "clientDesignationCustomer": "Kunde",
-    "clientDesignationStudent": "Schüler",
-    "clientDesignationHR": "Personalmanager",
-    "clientDesignationPrinciple": "Leiter",
-    "clientWordsParaOne": "Tanveers Hingabe und Fachkenntnisse in der Frontend-Entwicklung sind wirklich lobenswert. Sein Lehrstil ist außergewöhnlich und macht komplexe Konzepte leicht verständlich.",
-    "clientWordsParaTwo": "Ich bin beeindruckt von Tanveers Kreativität und Problemlösungsfähigkeiten als Frontend-Entwickler. Seine Projekte spiegeln sein Engagement für herausragende Benutzererfahrungen wider.",
-    "clientWordsParaThree": "Als Schüler hat das Lernen von Tanveer mein Leben verändert. Seine Anleitung und Einblicke aus der realen Welt haben mich gut auf eine Karriere in der Webentwicklung vorbereitet."
-}
+    "clientDesignationHR": "Personalleiter",
+    "clientWordsParaOne": "Tanveers Expertise in der Webentwicklung hat mich wirklich beeindruckt. Er hat unsere Website in ein visuell beeindruckendes und benutzerfreundliches Meisterwerk verwandelt. Ich kann seine Dienste wärmstens empfehlen.",
+    "clientWordsParaTwo": "Tanveers Fähigkeit, unsere Ideen in die Realität umzusetzen, war bemerkenswert. Wir waren kontinuierlich von seinen Kommunikations- und Problemlösungsfähigkeiten beeindruckt.",
+    "clientWordsParaThree": "Tanveer ist nicht nur ein Entwickler, er ist ein digitaler Künstler. Wir sind begeistert von den Ergebnissen und freuen uns auf zukünftige Zusammenarbeit.",
+    "note": "Hinweis",
+    "notReal": "Nicht echt"
+  }
+  
