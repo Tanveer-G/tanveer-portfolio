@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from "next/router";
 import { appWithTranslation } from "next-i18next";
 import { AnimatePresence, motion } from "framer-motion";
@@ -11,6 +12,9 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <>
+    <Head> 
+    <meta name="google-site-verification" content="8tYreHjnYWwIxPryVgAsM-qZyUTNcPE9Hn4miI53Ifw" />
+    </Head>
       <Script id="googleAnalyticsSRC"
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
