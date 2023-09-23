@@ -3,7 +3,7 @@ const generateSitemap = (pages, locales, defaultLocale) => {
   
     pages.forEach((page) => {
       locales.forEach((locale) => {
-        const url = `http://localhost:3000/${locale}${page}`;
+        const url = `https://tanveer-portfolio.vercel.app/${locale}${page}`;
         const isDefault = locale === defaultLocale;
         languageUrls.push({
           url,
