@@ -67,9 +67,6 @@
   resize: none;
 }
 
-.textArea:invalid, .input:invalid  {
-  color: pink;
-}
 
 .inputWrapper {
   justify-content: space-between;
