@@ -5,7 +5,7 @@ import Script from "next/script";
 import Layout from "@/components/Layout";
 import SliderTransition from "@/components/SliderTransition";
 import "@/styles/globals.css";
-
+import { Analytics } from '@vercel/analytics/react';
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
 
@@ -36,6 +36,7 @@ const MyApp = ({ Component, pageProps }) => {
           </motion.div>
         </AnimatePresence>
       </Layout>
+      <Analytics />
     </>
   );
 };
