@@ -1,79 +1,104 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import { useState, useEffect } from "react";
 import { NextSeo } from "next-seo";
 import { BiMessageError, BiMessageCheck } from "react-icons/bi";
-import emailjs from "@emailjs/browser";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import useSendEmail from "@/hooks/useSendEmail";
 import { BsArrowRight, BsLock } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/variants";
 import style from "@/styles/Contact.module.css";
+import {
+  nameRegex,
+  emailRegex,
+  subjectRegex,
+  messageRegex,
+} from "@/utils/regex";
+
+const initialFormData = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
+const initialFormValidation = {
+  name: false,
+  email: false,
+  subject: false,
+  message: false,
+};
 
 const Contact = () => {
   const { t: t } = useTranslation("contact");
   const { t: commonT } = useTranslation("common");
+  const { sendEmail } = useSendEmail();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState(false);
-  let isDisableButton = false;
-  if (
-    name.length >= 3 &&
-    email.match(/[^@]+@[^@]+\.[a-zA-Z]{2,6}/) &&
-    subject.length >= 3 &&
-    message.length >= 3
-  ) {
-    isDisableButton = true;
-  }
+  const [formData, setFormData] = useState(initialFormData);
+  const [isValid, setIsValid] = useState(initialFormValidation);
+
+  const [status, setStatus] = useState({ success: false, error: false });
 
   useEffect(() => {
-    if (sent || error) {
+    if (status.success || status.error) {
       const timeoutId = setTimeout(() => {
-        setSent(false);
-        setError(false);
+        setStatus({ success: false, error: false });
       }, 10000);
 
       return () => clearTimeout(timeoutId); // Cleanup the timeout
     }
-  }, [sent, error]);
+  }, [status.success, status.error]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setError(false);
-    setSent(false);
+  //* validation of form Data Start here
+  useEffect(() => {
+    const { name, email, subject, message } = formData;
 
-    const templateParams = {
-      to_name: `Dear Developer, Inquiry from Portfolio App`,
-      from_name: `${name}: Subject: ${subject}`,
-      message: `Subject: ${subject} | Message: ${message}`,
-      reply_to: `${email}`,
+    const updatedValidation = {
+      name: nameRegex.test(name),
+      email: emailRegex.test(email),
+      subject: subjectRegex.test(subject),
+      message: messageRegex.test(message),
     };
+    setIsValid(updatedValidation);
+  }, [formData]);
 
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
-      )
-      .then((response) => {
-        console.log("Email sent successfully!", response);
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
-        setSent(true);
-        setTimeout(() => setSent(false), 10000);
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
-        setSent(false);
-        setError(true);
-      });
+  const isFormValid =
+    isValid.name !== null &&
+    isValid.email !== null &&
+    isValid.subject !== null &&
+    isValid.message !== null &&
+    isValid.name !== false &&
+    isValid.email !== false &&
+    isValid.subject !== false &&
+    isValid.message !== false;
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ success: false, error: false });
+    if (isFormValid) {
+      try {
+        const { isSuccess } = await sendEmail(form);
+        if (isSuccess) {
+          setForm({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+          setStatus({ success: true, error: false });
+        }
+      } catch (error) {
+        console.error("Error in form submission:", error);
+        setStatus({ success: false, error: true });
+      }
+    } else {
+      console.log("Form not submitted. Please fix validation errors.");
+    }
+  };
+
   return (
     <>
       <NextSeo
@@ -130,36 +155,31 @@ const Contact = () => {
               <div className={style.inputGroup}>
                 <div className={style.inputWrapper}>
                   <input
+                    name="name"
                     required
                     type="text"
-                    minlength="3"
-                    maxlength="60"
+                    maxLength="60"
                     placeholder={t("name") + "*"}
                     className={style.input}
-                    value={name}
-                    onChange={(e) => {
-                      setName(e.target.value);
-                    }}
+                    onChange={handleInputChange}
+
                   />
-                  {name.length >= 3 && (
+                  {isValid.name && (
                     <span className={style.tickInput}>&#10004;</span>
                   )}
                 </div>
                 <div className={style.inputWrapper}>
                   <input
                     required
+                    name="email"
                     type="email"
                     placeholder={t("email") + "*"}
-                    value={email}
-                    pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
-                    maxlength="60"
+                    maxLength="200"
                     className={style.input}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
+                    onChange={handleInputChange}
                   />
 
-                  {email.match(/[^@]+@[^@]+\.[a-zA-Z]{2,6}/) && (
+                  {isValid.email && (
                     <span className={style.tickInput}>&#10004;</span>
                   )}
                 </div>
@@ -168,33 +188,29 @@ const Contact = () => {
               <div className={style.inputWrapper}>
                 <input
                   required
+                  name="subject"
                   type="text"
-                  minlength="3"
+                  maxLength="90"
                   placeholder={t("subject") + "*"}
                   className={style.input}
-                  value={subject}
-                  onChange={(e) => {
-                    setSubject(e.target.value);
-                  }}
+                  onChange={handleInputChange}
                 />
-                {subject.length >= 3 && (
+                {isValid.subject && (
                   <span className={style.tickInput}>&#10004;</span>
                 )}
               </div>
 
               <div className={style.textAreaWrapper}>
                 <textarea
+                  required
+                  name="message"
                   type="text"
+                  maxLength="1000"
                   placeholder={t("message") + "*"}
                   className={style.textArea}
-                  value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
-                  minlength="3"
-                  required
+                  onChange={handleInputChange}
                 />
-                {message.length >= 3 && (
+                {isValid.message && (
                   <span className={style.tickTextArea}>&#10004;</span>
                 )}
               </div>
@@ -203,11 +219,10 @@ const Contact = () => {
               <button
                 className={style.sendEmailButton}
                 onClick={(e) => handleSubmit(e)}
-                value="Send"
-                disabled={isDisableButton ? "" : "disabled"}
+                disabled={!isFormValid}
               >
                 <span className={style.talk}>{t("LetsTalk")}</span>
-                {isDisableButton ? (
+                {isFormValid ? (
                   <BsArrowRight className={style.arrow} />
                 ) : (
                   <BsLock className={style.arrow} />
@@ -215,7 +230,7 @@ const Contact = () => {
               </button>
             </motion.form>
 
-            {sent && (
+            {status.success && (
               <motion.div
                 className={style.messageBox}
                 variants={fadeIn("down", 0.2)}
@@ -233,7 +248,7 @@ const Contact = () => {
                 </p>
               </motion.div>
             )}
-            {error && (
+            {status.error && (
               <motion.div
                 className={style.messageBox}
                 variants={fadeIn("up", 0.2)}
