@@ -2,26 +2,27 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  column-gap: 0.2rem;
+  justify-content: space-around;
+  column-gap: 0.4rem;
   font-size: larger;
-  background-color: rgba(255, 255, 255, 0.110);
+  background-color: rgba(89, 65, 169, 0.15);
   border-radius: 0.75rem;
-  padding: 0.14rem 0 0.14rem 0.2rem;
-  border: 1.5px solid var(--accentRed);
   filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.6));
+  padding: 0.4rem 0.4rem;
 }
 .multiLanguageBtn:active {
-  background-color: var(--redHover);
+  border-color: var(--redHover);
 }
 
 .rotate {
-  transform: rotate(180deg);
+  transform: rotate(270deg);
 }
 /* section dropdown  */
 .dropDown {
+  color: silver;
   position: absolute;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.559);
+  background-color: rgba(0, 0, 0, 0.9);
   outline: none;
   border: none;
   border-radius: 0.8rem;
@@ -36,7 +37,8 @@
   width: 8rem;
   justify-content: space-between;
   padding: 2px 2px;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.35);
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid silver;
   border-radius: 0.75rem;
 }
 
@@ -46,7 +48,6 @@
 
 .tickActive{
   display: inline;
-  color: rgba(255, 255, 255, 0.5);
   margin-top: 1.5px;
   transform: rotate(10deg);
 }
@@ -64,15 +65,16 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-.languageSelectedColor{
-  color: rgba(255, 255, 255, 0.5);
+.languageSelectedColor, .tickActive{
+  color: var(--redHover);
+  opacity: 0.8;
 }
 
 .buttonWrapper:hover {
-  background-color: rgba(255, 255, 255, 0.18); ;
-  filter: drop-shadow(0 0 0.75rem var(--redHover));
+  color: var(--redHover);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .buttonWrapper:active {
-  background-color: var(--redHover);
+  border-color: var(--redHover);
 }
