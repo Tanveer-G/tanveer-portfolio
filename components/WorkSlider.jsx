@@ -13,40 +13,48 @@ const workSlides = {
     {
       images: [
         {
-          title: "Netflix Clone",
-          path: "/pj1-r1-c1.jpg",
+          title: "PayForm Pro",
+          path: "/payformpro.png",
+          link: "https://tanveer-payformpro.vercel.app",
         },
         {
           title: "Good News App",
-          path: "/pj2-r1-c2.jpg",
+          path: "/goodnews.png",
+          link: "https://tanveer-goodnews.vercel.app",
         },
         {
-          title: "Best Weather App",
-          path: "/pj3-r2-c1.jpg",
+          title: "ZipSearch",
+          path: "/zipsearch.png",
+          link: "https://tanveer-zipsearch.vercel.app",
         },
         {
           title: "Grocery Shop UI",
-          path: "/pj4-r2-c2.jpg",
+          path: "/grocery.jpg",
+          link: "https://github.com/Tanveer-G",
         },
       ],
     },
     {
       images: [
         {
-          title: "Netflix clone",
-          path: "/pj5-r1-c1.jpg",
+          title: "Block Buster",
+          path: "/blockbuster.jpg",
+          link: "https://github.com/Tanveer-G",
         },
         {
           title: "Google Home UI",
-          path: "/pj6-r1-c2.jpg",
+          path: "/googleui.jpg",
+          link: "https://github.com/Tanveer-G",
         },
         {
           title: "Best Weather App",
-          path: "/pj7-r2-c1.jpg",
+          path: "/bestweather.jpg",
+          link: "https://github.com/Tanveer-G",
         },
         {
           title: "Tanveer portfolio",
           path: "/og.png",
+          link: "https://tanveer-portfolio.vercel.app/en-US",
         },
       ],
     },
@@ -56,7 +64,7 @@ const workSlides = {
 const WorkSlider = () => {
   const { t } = useTranslation("work");
   return (
-    <Swiper
+    (<Swiper
       dir="ltr"
       spaceBetween={10}
       pagination={{
@@ -67,18 +75,18 @@ const WorkSlider = () => {
     >
       {workSlides.slides.map((slide, index) => {
         return (
-          <SwiperSlide key={index}>
+          (<SwiperSlide key={index}>
             <div className={style.swiperSliderGridBox}>
-              {slide.images.map((image, index) => (
-                <div key={index} className={style.sliderImageBox}>
-                  <div className={style.sliderImage}>
+              {slide.images.map((image) => (
+                <div key={image?.link + image?.title} className={style.sliderImageBox}>
+                  <a href={image?.link} className={style.sliderImage}>
                     <Image
-                      src={image.path}
-                      width={280}
-                      height={140}
-                      alt="Projects Pic"
-                      className={style.pics}
-                    />
+                        src={image?.path}
+                        width={280}
+                        height={140}
+                        alt={image?.title}
+                        className={style.pics}
+                      />
 
                     {/* overlay gradient */}
                     <div className={style.overlayGradient}></div>
@@ -95,14 +103,14 @@ const WorkSlider = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               ))}
             </div>
-          </SwiperSlide>
+          </SwiperSlide>)
         );
       })}
-    </Swiper>
+    </Swiper>)
   );
 };
 
