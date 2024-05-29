@@ -20,7 +20,7 @@ import {
   SiI18Next,
   SiReactrouter,
   SiRedux,
-  SiWebpack,
+  SiTypescript,
 } from "react-icons/si";
 
 import {
@@ -32,7 +32,7 @@ import style from "@/styles/About.module.css";
 
 const About = () => {
   const [index, setIndex] = useState(0);
-  const { t: t } = useTranslation("about");
+  const { t } = useTranslation("about");
   const { t: commonT } = useTranslation("common");
 
   const aboutData = [
@@ -51,7 +51,7 @@ const About = () => {
             <SiI18Next key="SiI18Next"/>,
             <SiReactrouter key="SiReactrouter"/>,
             <SiRedux key="SiRedux"/>,
-            <SiWebpack key="SiWebpack" />
+            <SiTypescript key="SiTypescript" />
 
           ],
         },
@@ -96,11 +96,11 @@ const About = () => {
       info: [
         {
           title: t("selfLearningExperienceList.0"),
-          stage: "2023",
+          stage: "2024",
         },
         {
           title: t("selfLearningExperienceList.1"),
-          stage: "2021",
+          stage: "2023-24",
         },
         {
           title: t("selfLearningExperienceList.2"),
