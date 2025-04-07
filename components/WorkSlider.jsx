@@ -14,23 +14,23 @@ const workSlides = {
       images: [
         {
           title: "PayForm Pro",
-          path: "/payformpro.png",
+          path: "/payformpro.webp",
           link: "https://tanveer-payformpro.vercel.app",
         },
         {
           title: "Good News App",
-          path: "/goodnews.png",
+          path: "/goodnews.webp",
           link: "https://tanveer-goodnews.vercel.app",
         },
         {
           title: "ZipSearch",
-          path: "/zipsearch.png",
+          path: "/zipsearch.webp",
           link: "https://tanveer-zipsearch.vercel.app",
         },
         {
-          title: "Grocery Shop UI",
-          path: "/grocery.jpg",
-          link: "https://github.com/Tanveer-G",
+          title: "Pic Perfect Pro",
+          path: "/picperfectpro.webp",
+          link: "https://tanveer-pic-perfect-pro.vercel.app/",
         },
       ],
     },
@@ -38,7 +38,7 @@ const workSlides = {
       images: [
         {
           title: "Block Buster",
-          path: "/blockbuster.jpg",
+          path: "/blockbuster.webp",
           link: "https://github.com/Tanveer-G",
         },
         {
@@ -48,12 +48,12 @@ const workSlides = {
         },
         {
           title: "Best Weather App",
-          path: "/bestweather.jpg",
+          path: "/bestweather.webp",
           link: "https://github.com/Tanveer-G",
         },
         {
           title: "Tanveer portfolio",
-          path: "/og.png",
+          path: "/og.webp",
           link: "https://tanveer-portfolio.vercel.app/en-US",
         },
       ],

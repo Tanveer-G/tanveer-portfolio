@@ -1,10 +1,10 @@
 import { NextSeo } from "next-seo";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import ParticlesContainer from "@/components/ParticlesContainer";
+// import ParticlesContainer from "@/components/ParticlesContainer";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import Typewriter from "typewriter-effect";
+// import Typewriter from "typewriter-effect";
 import { fadeIn } from "@/variants";
 import style from "@/styles/Home.module.css";
 import HomeButtons from "@/components/HomeButtons";
@@ -65,7 +65,8 @@ export default function Home() {
               {t("myAdjectives")}
               <br />
               <span className={style.myName}>
-                <Typewriter
+                {t("myProfessionFD")}
+                {/* <Typewriter
                   options={{
                     strings: [
                       t("myProfessionFD"),
@@ -75,7 +76,7 @@ export default function Home() {
                     autoStart: true,
                     loop: true,
                   }}
-                />
+                /> */}
               </span>
             </h1>
 
@@ -105,7 +106,7 @@ export default function Home() {
         {/* Right Section Images TS-Particles */}
         <section className={style.rightPartContainer}>
           {/* bg image */}
-          <ParticlesContainer />
+          {/* <ParticlesContainer /> */}
           {/* My Photo or Avtar*/}
         </section>
       </main>

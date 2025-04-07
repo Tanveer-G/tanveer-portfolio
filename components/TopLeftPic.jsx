@@ -1,6 +1,6 @@
 import Image from "next/image";
 import style from "./css/TopLeftPic.module.css";
-import TopLeftIMG from '@/public/top-left-img.png';
+import TopLeftIMG from '@/public/top-left-img.webp';
 
 const TopLeftPic = () => {
   return (

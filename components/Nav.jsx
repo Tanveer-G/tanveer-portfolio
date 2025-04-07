@@ -21,11 +21,11 @@ const links = [
   { name: "about", path: "/about", icon: <HiUser /> },
   { name: "services", path: "/services", icon: <HiRectangleGroup /> },
   { name: "work", path: "/work", icon: <HiViewColumns /> },
-  {
-    name: "testimonials",
-    path: "/testimonials",
-    icon: <HiChatBubbleBottomCenterText />,
-  },
+  // {
+  //   name: "testimonials",
+  //   path: "/testimonials",
+  //   icon: <HiChatBubbleBottomCenterText />,
+  // },
   {
     name: "contact",
     path: "/contact",
@@ -50,10 +50,12 @@ const Nav = () => {
 
             className={`${link.path === pathname && style.active} 
             ${style.link}`}
-            key={index}
+            key={link.name + link.path}
+            aria-label={t(link.name)} // Accessible name for screen readers
+            aria-current={link.path === pathname ? "page" : undefined} // Indicate active link
           >
             {/* tooltip */}
-            <div className={style.tooltipOuter}>
+            <div className={style.tooltipOuter} role="tooltip" aria-hidden="true">
               <div className={style.tooltipInner}>
                 <div className={style.tooltipText}>{t(link.name)}</div>
                 {/* tooltip triangle */}

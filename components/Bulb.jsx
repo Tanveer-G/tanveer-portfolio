@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BulbImg from '@/public/bulb.png';
+import BulbImg from '@/public/bulb.webp';
 import style from './css/Bulb.module.css'
 
 const Bulb = () => {

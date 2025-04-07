@@ -1,6 +1,6 @@
 import Image from "next/image";
 import style from './css/Circles.module.css';
-import CircleImg from '../public/circles.png';
+import CircleImg from '../public/circles.webp';
 const Circles = () => {
   return (
     <div className={style.circle}>

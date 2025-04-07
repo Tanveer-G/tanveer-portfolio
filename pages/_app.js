@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import { useRouter } from "next/router";
 import { appWithTranslation } from "next-i18next";
-import { AnimatePresence, motion } from "framer-motion";
+// import { AnimatePresence, motion } from "framer-motion";
 import Script from "next/script";
 import Layout from "@/components/Layout";
-import SliderTransition from "@/components/SliderTransition";
+// import SliderTransition from "@/components/SliderTransition";
 import "@/styles/globals.css";
 import { Analytics } from '@vercel/analytics/react';
 const MyApp = ({ Component, pageProps }) => {
@@ -33,12 +33,12 @@ const MyApp = ({ Component, pageProps }) => {
       </Script>
 
       <Layout>
-        <AnimatePresence mode="wait">
-          <motion.div key={router.route} className="h-full">
-            <SliderTransition />
+        {/* <AnimatePresence mode="wait"> */}
+          {/* <motion.div key={router.route} className="h-full"> */}
+            {/* <SliderTransition /> */}
             <Component {...pageProps} />
-          </motion.div>
-        </AnimatePresence>
+          {/* </motion.div> */}
+        {/* </AnimatePresence> */}
       </Layout>
       <Analytics />
     </>

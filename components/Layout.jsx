@@ -1,4 +1,4 @@
-import { Sora } from "@next/font/google";
+import { Sora } from "next/font/google";
 import TopLeftPic from "./TopLeftPic";
 import Header from "./Header";
 import Nav from "./Nav";

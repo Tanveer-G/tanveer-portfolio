@@ -54,15 +54,17 @@ const MultiLanguageBtn = () => {
         type="button"
         className={style.multiLanguageBtn}
         onClick={() => toggle()}
+        aria-label="Select language"
+        aria-expanded={showLanguages}
       >
         <SlGlobe />
         <TbChevronsDownRight className={showLanguages && style.rotate} />
       </button>
 
       {/* drop down Menu Languages */}
-      <section>
+      <section aria-live="polite">
         {showLanguages && (
-          <ul className={style.dropDown}>
+          <ul className={style.dropDown} role="listbox" >
             {languages.map(({ language_code, language_name }) => (
               <li key={language_code} className={style.buttonWrapper}>
                 <button
@@ -74,6 +76,8 @@ const MultiLanguageBtn = () => {
                     languageChanger(language_code);
                     toggle();
                   }}
+                  role="option"
+                  aria-selected={language_code === locale}
                 >
                   {language_name}
                 </button>
@@ -83,6 +87,7 @@ const MultiLanguageBtn = () => {
                       ? style.tickActive
                       : style.tick
                   }
+                    aria-hidden="true"
                 >
                   &#10004;
                 </span>

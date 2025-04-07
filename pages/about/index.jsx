@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { NextSeo } from "next-seo";
-import CountUp from "react-countup";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/variants";
 import {
@@ -29,6 +28,7 @@ import {
 } from "react-icons/tb";
 
 import style from "@/styles/About.module.css";
+// import CountRow from "@/components/CountRow";
 
 const About = () => {
   const [index, setIndex] = useState(0);
@@ -108,15 +108,15 @@ const About = () => {
         },
       ],
     },
-    {
-      title: t("awards"),
-      info: [
-        {
-          title: t("awardList.0"),
-          stage: "2016",
-        },
-      ],
-    },
+    // {
+    //   title: t("awards"),
+    //   info: [
+    //     {
+    //       title: t("awardList.0"),
+    //       stage: "2016",
+    //     },
+    //   ],
+    // },
   ];
   
   return (
@@ -176,58 +176,8 @@ const About = () => {
           </motion.p>
 
           {/* Counters */}
-          <div className={style.countersBox}>
-            <div className={style.innerCountersBox}>
-              {/* Experience */}
-              <div
-                className={`${style.counterBoxContent} ${style.straightLine}`}
-              >
-                <div className={style.counterBigText}>
-                  <CountUp start={0} end={15} duration={5} />+
-                </div>
-                <div className={style.counterSmallText}>
-                  {t("yearOfExperience")}
-                </div>
-              </div>
+          {/* <CountRow /> */}
 
-              {/* clients */}
-              <div
-                className={`${style.counterBoxContent} ${style.straightLine}`}
-              >
-                <div className={style.counterBigText}>
-                  <CountUp start={0} end={1} duration={2} />+
-                </div>
-                <div className={style.counterSmallText}>
-                  {t("satisfiedClients")}
-                </div>
-              </div>
-
-              {/* Projects */}
-              <div
-                className={`${style.counterBoxContent} ${style.straightLine}`}
-              >
-                <div className={style.counterBigText}>
-                  <CountUp start={0} end={10} duration={5} />+
-                </div>
-                <div className={style.counterSmallText}>
-                  {t("completedProjects")}
-                </div>
-              </div>
-
-              <div className={`${style.counterBoxContent}`}>
-                <div className={style.counterBigText}>
-                  <CountUp start={0} end={1} duration={2} />+
-                </div>
-                <div className={style.counterSmallText}>
-                  {t("winningAwards")}
-                </div>
-              </div>
-
-              <div>
-                <div></div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* infor */}
