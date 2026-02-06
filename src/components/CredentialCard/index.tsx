@@ -3,12 +3,12 @@ import { useTranslations } from 'next-intl';
 import { CredentialId } from '@/src/constants/credentials';
 
 interface CredentialCardProps {
-  credentialId: CredentialId;
+  credentialId?: CredentialId;
 }
 
-const CredentialCard: React.FC<CredentialCardProps> = ({ credentialId="bachelor" }) => {
+const CredentialCard: React.FC<CredentialCardProps> = () => {
   const t = useTranslations('credentialsCard');
-
+const credentialId="bachelor";
   // Get translated content using the ID
   const degree = t(`credentialsList.${credentialId}.degree`);
   const university = t(`credentialsList.${credentialId}.university`);

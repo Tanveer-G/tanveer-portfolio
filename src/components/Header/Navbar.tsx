@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export const pages = [
   // { id: 'home', link: '/' },
   { id: 'work', link: '/work' }, // think change name to projects ( for better SEO but my current portfolio use work)
-  { id: 'experience', link: '/experience' },
+  { id: 'experience', link: "/experience" },
   { id: 'about', link: '/about' }, // { id: 'about', link: '/about', subpage: [{id:'',link:''},{id:'',link:''}] }
   // { id: 'services', link: '/services' },
   // { id: 'contact', link: '/contact' }, // using hire me button is a contact page so thinking to remove for space

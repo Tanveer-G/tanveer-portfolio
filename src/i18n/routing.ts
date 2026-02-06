@@ -17,6 +17,10 @@ export const routing = defineRouting({
       'en-US': '/work',
       'ar-SA': '/work'
     },
+    '/experience': {
+      'en-US': '/experience',
+      'ar-SA': '/experience'
+    },
     '/contact': {
       'en-US': '/contact',
       'ar-SA': '/contact'
