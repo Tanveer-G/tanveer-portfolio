@@ -1,0 +1,37 @@
+{
+  "logo": {
+    "alt": "تنوير - شعار المحفظة",
+    "title": "الرئيسية"
+  },
+  "hireMe": {
+    "text": "وظفني",
+    "ariaLabel": "افتح نموذج الاتصال"
+  },
+  "mobileMenu": {
+    "open": "افتح القائمة",
+    "close": "إغلاق القائمة",
+    "ariaLabel": "تبديل قائمة التنقل"
+  },
+  "languageSwitcher": {
+    "label": "اللغة",
+    "ariaLabel": "تغيير اللغة",
+    "options": {
+      "en-us": "الإنجليزية",
+      "ar-sa": "العربية"
+    }
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "work": "الأعمال",
+    "about": "من أنا",
+    "experience": "الخبرة",
+    "services": "الخدمات",
+    "testimonials": "التوصيات",
+    "contact": "الاتصال",
+    "blog": "المدونة"
+  },
+  "ariaLabels": {
+    "mainNav": "التنقل الرئيسي",
+    "languageSelect": "اختيار اللغة"
+  }
+}

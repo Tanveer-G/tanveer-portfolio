@@ -1,0 +1,32 @@
+{
+  "showLess": "Show Less",
+  "showMore": "Show More",
+  "responsibilities": "Responsibilities:",
+  "technologies": "Technologies:",
+  "remote": "Remote",
+  "onsite": "On-site",
+  "experiencesList": {
+    "fivecentscdn": {
+      "role": "Front-End Developer",
+      "period": "April 2024 – January 2026",
+      "employmentType": "remote",
+      "responsibilities": [
+        "Led the development of the company website, transforming Figma designs into deployed applications, and collaborated with senior management for iterative feedback.",
+        "Developed and launched products such as Image Optimizer, Bandwidth Calculator, Encoding and Transcoding Calculator, and Stream Tester for HLS and Dash URLs, incorporating real-time metrics, dynamic graphs, and animations.",
+        "Enhanced organic traffic by 25% through the creation of SEO-optimized landing pages and dynamic calculators using Tailwind CSS.",
+        "Worked with international teams to convert Figma designs into responsive, cross-platform code, ensuring consistency with design systems and functionality across devices."
+      ]
+    },
+    "holidayhub": {
+      "role": "Web Developer (CRM)",
+      "period": "December 2023 – March 2024",
+      "employmentType": "onsite",
+      "responsibilities": [
+        "Directed front-end development for a CRM admin panel, creating dynamic components for managing offers, accounts, clients, sales, employees, and vendors using React and Redux Toolkit.",
+        "Integrated RESTful APIs to enable seamless CRUD operations, optimizing data workflows for marketing, sales, and administrative teams.",
+        "Achieved a 30% reduction in UI rendering latency through code optimization, enhanced modularity, and efficient state management.",
+        "Participated in regular meetings with the CEO and backend teams, providing strategic recommendations and implementing improvements to enhance overall system performance."
+      ]
+    }
+  }
+}

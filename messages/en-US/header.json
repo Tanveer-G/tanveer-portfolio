@@ -1,0 +1,37 @@
+{
+  "logo": {
+    "alt": "Tanveer - Portfolio Logo",
+    "title": "Home"
+  },
+  "hireMe": {
+    "text": "Hire Me",
+    "ariaLabel": "Open contact form"
+  },
+  "mobileMenu": {
+    "open": "Open menu",
+    "close": "Close menu",
+    "ariaLabel": "Toggle navigation menu"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "ariaLabel": "Change language",
+    "options": {
+      "en-us": "English",
+      "ar-sa": "العربية"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "work": "Work",
+    "about": "About",
+    "experience": "Experience",
+    "services": "Services",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "ariaLabels": {
+    "mainNav": "Main navigation",
+    "languageSelect": "Select language"
+  }
+}

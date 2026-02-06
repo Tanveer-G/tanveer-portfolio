@@ -1,0 +1,165 @@
+@import "tailwindcss";
+:root {
+    --foreground: #ededed;
+    --overlay-black: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.6) 0,
+    transparent 60%,
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+
+@theme inline {
+      /* ─── Fonts ─────────────────────────────────────────────────────── */
+  --font-heading: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+   /* ─── Colors ────────────────────────────────────────────────────── */
+  --color-bg:            #020C1C;
+  --color-primary:       #F2F2F2;
+  --color-secondary:     #E6EEF8;
+  --color-grayish:       #8b8b8c;
+  --color-pinkish:       #ff3ebc;
+  --color-purplish:      #6867F9;
+  --color-purple-l:      #E6E9FF;
+  
+  /* --color-soft-white:    #D2D2D2; */
+  /* #BDBDBD #BDBDBD #8b8b8c */
+/* #080808 #121212  */
+
+}
+
+
+/* 3. Base reset */
+@layer base {
+  html, body {
+    background-color: var(--color-bg);
+  }
+  
+  html, body, p {
+     color: var(--color-secondary);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3,h4,h5,h6, button {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+/* Custom focus styles (only when using Tab key) */
+:focus-visible {
+  outline: 2px solid var(--color-pinkish); 
+  outline-offset: 4px;
+  border-radius: 0.2rem; 
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-pinkish);
+  outline-offset: 4px;
+  border-radius: 0.2rem;
+}
+
+
+@layer components {
+  .rounded-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: var(--border-width, 1px); /* variable border width */
+    background: var(--border-gradient, conic-gradient(
+      from 180deg at 50% 50%, 
+      rgba(57, 62, 70, 0.5) 0deg, 
+      rgba(57, 62, 70, 0.5) 133.2deg, 
+      rgba(253, 255, 253, 0.5) 180deg, 
+      rgba(57, 62, 70, 0.5) 226.8deg, 
+      rgba(57, 62, 70, 0.5) 360deg
+    ));
+    border-radius: inherit;
+    --m: conic-gradient(#000 0 0);
+    mask: var(--m) content-box exclude, var(--m);
+    pointer-events: none;
+    z-index: 0;
+    opacity: var(--opacity, 100%);
+  }
+  
+}
+
+.gradient-text {
+  /* Use whatever colors you like in this linear-gradient */
+  background: linear-gradient(90deg, #ff3ebc, #6867F9);
+  
+  /* The magic: clip the background to the text */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* gradient border */
+.gradientBorderMask::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--borderRadius,  9999px);
+  border: var(--borderWidth, 2px) solid transparent;
+  background: var(--gradient, linear-gradient(90deg, #6867F9, #ff3ebc)) border-box;
+
+  /* Mask to create a border effect */
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  /* mask-composite: exclude; */
+    -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;   
+}
+
+
+ .sharp-line {background: linear-gradient(270deg, #393E46 25%, #FDFFFD 50%, #393E46 75%);
+   clip-path: polygon(
+    0% 50%,
+    15% 0%,                  /* top‑left corner inset 10px */
+    calc(100% - 15%) 0%,     /* top‑right inset 10px */
+    100% 50%,                 /* right‑middle point */
+    calc(100% - 15%) 100%,   /* bottom‑right inset 10px */
+    15% 100%                 /* bottom‑left inset 10px */
+  );
+  }
+
+  /* project card*/
+@layer utilities {
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  @media (min-width: 1024px) {
+    .desktop\:hidden {
+      display: none;
+    }
+  }
+}

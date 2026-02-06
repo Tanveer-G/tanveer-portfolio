@@ -1,0 +1,139 @@
+
+
+/* H1
+   mobile = 24px  | md = 38px  | lg = 40px  | xxl = 50px
+   weight: 700 (Bold)
+*/
+.typo-h1 {
+  /* font-family: var(--font-heading); */
+  font-weight: 700;
+  font-size: 1.5rem;       /* 24px (mobile) */
+  line-height: 120%;
+  letter-spacing: 0;
+}
+@media (min-width: 48rem)  { .typo-h1 { font-size: 2.375rem;  } } /* 38px */
+@media (min-width: 64rem)  { .typo-h1 { font-size: 2.5rem;    } } /* 40px */
+@media (min-width: 90rem)  { .typo-h1 { font-size: 3.125rem;  } } /* 50px */
+
+/* H2-Heading (primary)
+   mobile = 23px  | md = 28px  | lg = 32px  | xxl = 38px
+   weight: 700 (Bold)
+*/
+.typo-h2 {
+  /* font-family: var(--font-heading); */
+  font-weight: 700;
+  font-size: 1.4375rem; /* 23px (mobile) */
+  line-height: 120%;    
+  letter-spacing: 0;
+}
+@media (min-width: 48rem)  { .typo-h2 { font-size: 1.75rem;  } } /* 28px */
+@media (min-width: 64rem)  { .typo-h2 { font-size: 2rem;      } } /* 32px */
+@media (min-width: 90rem)  { .typo-h2 { font-size: 2.375rem; } } /* 38px */
+
+/* H3 (corrected from image typo)
+   mobile = 18px  | md = 22px  | lg = 22px  | xxl = 25px
+   weight: 600 (Semi-bold)
+*/
+.typo-h3 {
+  /* font-family: var(--font-heading); */
+  font-weight: 600;
+  font-size: 1.125rem; /* 18px (mobile) */
+  line-height: auto;   
+  letter-spacing: 0;
+}
+@media (min-width: 48rem)  { .typo-h3 { font-size: 1.375rem; } } /* 22px */
+@media (min-width: 64rem)  {  /* same as 48rem / tablet */ } 
+@media (min-width: 90rem)  { .typo-h3 { font-size: 1.5625rem; } } /* 25px */
+
+
+/* ---------- Body / Paragraphs ---------- */
+
+/* P1-Body
+   mobile: 14px | md: 15px | lg: 16px | xxl: 18px
+   image shows "Line Height: Auto" so we keep line-height:auto at base
+*/
+.typo-p1 {
+  /* font-family: var(--font-body); */
+  font-weight: 500;
+  font-size: 0.875rem;  /* 14px */
+  line-height: auto;
+  letter-spacing: 0;
+}
+@media (min-width: 48rem)  { .typo-p1 { font-size: 0.9375rem; } } /* 15px */
+@media (min-width: 64rem)  { .typo-p1 { font-size: 1rem; } }       /* 16px */
+@media (min-width: 90rem)  { .typo-p1 { font-size: 1.125rem; } }  /* 18px */
+
+/* P2-Body
+   mobile: 13px / 20px  | md: 14px / 22px  | lg: 16px / 28px  | xxl: 16px / 24px
+*/
+.typo-p2 {
+  /* font-family: var(--font-body); */
+  font-weight: 400;
+  font-size: 0.8125rem;    /* 13px (mobile) */
+  line-height: 1.5385;     /* ~20px on 13px */
+  letter-spacing: 0;
+}
+@media (min-width: 48rem)  { .typo-p2 { font-size: 0.875rem; line-height: 1.5714; } } /* 14px / ~22px */
+@media (min-width: 64rem)  { .typo-p2 { font-size: 1rem;    line-height: 1.75;   } } /* 16px / 28px */
+@media (min-width: 90rem)  { .typo-p2 { font-size: 1rem;    line-height: 1.5;    } } /* 16px / 24px */
+
+/* P3-Body
+   mobile: 12px / 18px  | md: 13px / 20px  | lg: 14px / 20px  | xxl: 14px / 20px
+*/
+.typo-p3 {
+  /* font-family: var(--font-body); */
+  font-weight: 400;
+  font-size: 0.75rem;    /* 12px (mobile) */
+  line-height: 1.5;      /* 18px on 12px */
+  letter-spacing: 0;
+}
+@media (min-width: 48rem)  { .typo-p3 { font-size: 0.8125rem; line-height: 1.5385; } } /* 13px / ~20px */
+@media (min-width: 64rem)  { .typo-p3 { font-size: 0.875rem;  line-height: 1.4286; } } /* 14px / ~20px */
+@media (min-width: 90rem)  {  /* 14px / ~20px */ }
+
+/* P4-Body
+   mobile: 10px / 16px  | md: 12px / 18px  | lg: 12px / 18px  | xxl: 12px / 18px
+*/
+.typo-p4 {
+  /* font-family: var(--font-body); */
+  font-weight: 400;
+  font-size: 0.625rem;   /* 10px (mobile) */
+  line-height: 1.6;      /* ~16px on 10px */
+  letter-spacing: 0;
+}
+@media (min-width: 48rem)  { .typo-p4 { font-size: 0.75rem; line-height: 1.5; } } /* 12px / 18px */
+@media (min-width: 64rem)  { .typo-p4 { font-size: 0.75rem; line-height: 1.5; } } /* 12px / 18px */
+@media (min-width: 90rem)  { .typo-p4 { font-size: 0.75rem; line-height: 1.5; } } /* 12px / 18px */
+
+
+/* ---------- Buttons & Caps ---------- */
+
+/* B1-Button
+   size: 18px, semibold 600, uppercase with slight letter-spacing
+*/
+.typo-b1 {
+  /* font-family: var(--font-body); */
+  font-weight: 600;
+  font-size: 0.875rem; /* 14px */
+  line-height: auto;    /* ~22.5px */
+  letter-spacing: 0;
+
+}
+@media (min-width: 48rem)  { .typo-b1 { font-size: 0.9375rem; } } /* 15px */
+@media (min-width: 64rem)  { .typo-b1 { font-size: 1rem; } }      /* 16px */
+@media (min-width: 90rem)  { .typo-b1 { font-size: 1.125rem; } }  /* 18px */
+
+/* Product Stack / Title CAP
+   size: 18px, semibold 600, uses heading font, uppercase with tiny letter-spacing
+*/
+.typo-cap {
+  /* font-family: var(--font-heading); */
+  font-weight: 600;
+  font-size: 0.875rem; /* 14px */
+  line-height: auto;     /* ~22.5px */
+  letter-spacing: 0.003em; /* ~0.3% */
+  text-transform: uppercase;
+}
+@media (min-width: 48rem)  { .typo-cap { font-size: 0.9375rem; } } /* 15px */
+@media (min-width: 64rem)  { .typo-cap { font-size: 1rem; } }      /* 16px */
+@media (min-width: 90rem)  { .typo-cap { font-size: 1.125rem; } }  /* 18px */

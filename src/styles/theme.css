@@ -1,0 +1,177 @@
+:root{
+  /* TYPOGRAPHY */
+  /* --font-display: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; */
+  /* --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; */
+
+  /* COLORS & OVERLAY */
+  --bg-deep: #060917;                 /* darkest near-black cosmic */
+  --bg-mid:  #0b1020;                 /* used for panels */
+  --text-main: #E6EEF8;               /* soft white for paragraphs */
+  --text-strong: #ffffff;             /* pure white (for very large text if needed) */
+
+  --overlay-rgba:  rgba(6,9,20,0.48); /* background overlay to improve contrast */
+
+  /* HEADLINE GRADIENT (pink -> purple -> blue) */
+  --grad-1-start: #FF62B5; /* pink */
+  --grad-1-mid:   #A96BFF; /* purple */
+  --grad-1-end:   #5FA0FF; /* bright blue */
+
+  /* CTA gradient (slightly different but consistent) */
+  --cta-start: #FF6EC7;
+  --cta-mid:  #AE6CFF;
+  --cta-end:   #6E79FF;
+
+  /* Outlines and subtle accents */
+  --accent-outline: rgba(140, 88, 255, 0.18);
+  --button-text: #FFFFFF;
+
+  /* Icon background and label text */
+  --icon-bg: rgba(255,255,255,0.06);
+  --icon-label: #DCE9FF;
+
+  /* Shadow / glow */
+  --glow-strong: 0 8px 30px rgba(110,121,255,0.18);
+  --glow-subtle:  0 6px 18px rgba(0,0,0,0.45);
+
+
+  /* --headline-gradient: linear-gradient(90deg, var(--grad-1-start) 0%, var(--grad-1-mid) 50%, var(--grad-1-end) 100%); */
+  --headline-gradient: linear-gradient(-70deg, var(--grad-1-end) 0%, var(--grad-1-mid) 70%, var(--grad-1-start) 100%);
+
+
+--cta-gradient: linear-gradient(90deg, var(--cta-start) 0%, var(--cta-mid) 0%, var(--cta-end) 100%);
+--cta-gradient-reverse: linear-gradient(90deg, var(--cta-end) 0%, var(--cta-mid) 0%, var(--cta-start) 100%);
+--gradient-cta-border: linear-gradient(to right, var(--cta-start), var(--cta-mid), var(--cta-end));
+
+}
+
+.btn-outline-border {
+  background: linear-gradient( rgba(0,0,0,0), rgba(0,0,0,0) ), var(--cta-gradient);
+background-origin: border-box;
+background-clip: padding-box, border-box;
+border: 2px solid transparent;
+}
+
+.rounded-border {
+  position: relative;
+}
+
+@layer components {
+  .rounded-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: var(--border-width, 1px); /* variable border width */
+    background: var(--border-gradient, conic-gradient(
+      from 180deg at 50% 50%, 
+      rgba(57, 62, 70, 0.5) 0deg, 
+      rgba(57, 62, 70, 0.5) 133.2deg, 
+      rgba(253, 255, 253, 0.5) 180deg, 
+      rgba(57, 62, 70, 0.5) 226.8deg, 
+      rgba(57, 62, 70, 0.5) 360deg
+    ));
+    border-radius: inherit;
+    --m: conic-gradient(#000 0 0);
+    mask: var(--m) content-box exclude, var(--m);
+    pointer-events: none;
+    z-index: 0;
+    opacity: var(--opacity, 100%);
+  }
+  
+}
+
+
+.home-title {
+  /* font-family: var(--font-display); */
+  font-weight: 700;
+  font-size: clamp(28px, 5vw + 0.5rem, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  background: var(--headline-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subhead {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--text-main);
+  max-width: 680px;
+}
+
+
+
+
+
+.btn-primary {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:48px;
+  padding: 0 28px;
+  border-radius: 14px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--button-text);
+  background: var(--cta-gradient);
+  box-shadow: var(--glow-strong);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(110,121,255,0.22);
+}
+
+
+
+.btn-outline {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:48px;
+  padding: 0 28px;
+  border-radius: 14px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-main);
+  border: 2px solid rgba(160,150,255,0.26); /* subtle purple outline */
+  background: transparent;
+  transition: background .18s ease, transform .18s ease;
+}
+.btn-outline:hover {
+  background: linear-gradient(90deg, rgba(110,110,255,0.06), rgba(255,110,199,0.04));
+  transform: translateY(-2px);
+}
+
+
+.tech-icon {
+  width: 64px;
+  height: 64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background: var(--icon-bg);
+  box-shadow: var(--glow-subtle);
+}
+.tech-label { font-family: var(--font-ui); font-size:12px; color: var(--icon-label); margin-top:8px; text-align:center;}
+
+
+
+.hero {
+  background-image: url('/images/star-bg.webp');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: var(--overlay-rgba); /* rgba(6,9,20,0.48) */
+  pointer-events:none;
+}
+

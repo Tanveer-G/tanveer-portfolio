@@ -1,0 +1,52 @@
+{
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Here are some of my recent works",
+    "description": "A selection of projects demonstrating skills, tools and production examples.",
+    "actions": {
+      "live": "Live Demo",
+      "video": "Watch Demo",
+      "github": "View Code",
+      "playVideo": "Play Video Demo",
+      "viewLive": "View {title} live",
+      "watchVideo": "Watch video demo of {title}", 
+      "viewGithub": "View {title} on GitHub"
+    },
+    "demo": {
+      "title": "Project Demo",
+      "watchDemo": "Watch Demo Video",
+      "loading": "Loading video...",
+      "close": "Close Demo"
+    },
+    "projectsList": {
+      "good-news": {
+        "title": "Good News PWA: Filters & Bookmarks",
+        "description": "Good News PWA provides an intuitive news browsing experience with advanced filtering, search, bookmarking, and infinite scrolling features. The app is optimized for performance and includes a smooth scroll-to-top function for effortless navigation across news articles."
+      },
+      "payform-pro": {
+        "title": "PayForm Pro: Modular Razorpay Integration", 
+        "description": "PayForm Pro streamlines payment integration by offering a modular solution for secure form submissions and payment processing. It features a user-friendly frontend, robust backend API routes, and efficient data management with MongoDB."
+      },
+      "zipsearch": {
+        "title": "ZipSearch: Postal Code Information App",
+        "description": "ZipSearch is an interactive platform for exploring global postal code data. Leveraging the Zippopotam API, the app delivers seamless access to location-based information for data-driven searches."
+      },
+      "pic-perfect": {
+        "title": "Pic Perfect: Realtime Image Optimization App",
+        "description": "Pic Perfect is a web application designed for real-time image optimization. It enables users to efficiently manipulate and optimize images, ensuring a fast and seamless experience."
+      },
+      "portfolio": {
+        "title": "Geo-Targeted Portfolio App: Multilingual & SEO-Optimized",
+        "description": "Tanveer's Portfolio is a multilingual and SEO-optimized web app that showcases skills, projects, and achievements. Built with modern technologies, it offers an engaging and accessible experience for diverse audiences."
+      },
+      "weather-app": {
+        "title": "Best Weather App",
+        "description": "Best Weather App delivers real-time weather updates with dynamic visuals that change based on current conditions. It offers accurate live data with an engaging interface."
+      },
+      "blockbuster": {
+        "title": "Block Buster: Movie Reviews & Filters", 
+        "description": "Block Buster is a dynamic web application for movie reviews that combines filtering, sorting, and detailed movie insights. Designed for responsiveness and speed, it offers an engaging experience for film enthusiasts."
+      }
+    }
+  }
+}
