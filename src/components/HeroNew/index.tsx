@@ -27,7 +27,7 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
              <GradientBtnLayout borderGradient={`linear-gradient(to left, #FF6EC7, #AE6CFF, #6E79FF)`} > <Link href="#work" className="p-5 py-20 h-16">VIEW MY WORK</Link></GradientBtnLayout>
-              <a href="#contact" className="btn-outline">CONTACT NOW!</a>
+              <Link href="/contact" className="btn-outline">CONTACT NOW!</Link>
             </div>
 
           

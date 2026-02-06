@@ -12,7 +12,7 @@ export default async function Hero() {
     >
       {/* Main hero */}
       <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-12">
-        <div className="order-2 text-center md:order-1 md:col-span-7 md:text-start">
+        <div className="w-full lg:min-w-md lg:max-w-[584px] order-2 text-center md:order-1 md:col-span-7 md:text-start">
           <div className="text-secondary mb-1 flex items-center justify-center gap-2 text-sm md:justify-start md:text-[15px] lg:gap-3">
             <span className="text-indigo-300">+</span>
             <span className="">{t('welcomeLine')}</span>{' '}
@@ -35,7 +35,7 @@ export default async function Hero() {
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <GradientBtnLayout
-              className="typo-b1 flex h-12 w-full items-center justify-center font-semibold md:w-1/3"
+              className="typo-b1 flex h-12 w-full items-center justify-center font-semibold lg:w-1/3"
               borderWidth="1.6px"
               borderGradient={`linear-gradient(to left, #FF6EC7, #AE6CFF, #6E79FF)`}
             >
@@ -45,7 +45,7 @@ export default async function Hero() {
             </GradientBtnLayout>
 
             <GradientBtnLayout
-              className="typo-b1 flex h-12 w-full items-center justify-center font-semibold md:w-1/3"
+              className="typo-b1 flex h-12 w-full items-center justify-center font-semibold lg:w-1/3"
               borderWidth="1.6px"
               borderGradient={`linear-gradient(to left, #6E79FF, #E6E9FF, #6E79FF)`}
             >

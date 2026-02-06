@@ -111,7 +111,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectId }) => {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
-                {t('actions.video')}
+                {t('projects.actions.video')}
               </button>
             )}
             
@@ -123,7 +123,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectId }) => {
                 className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 text-white text-sm hover:bg-white/20 transition-all duration-200 flex-1 justify-center min-w-[100px] border border-white/20"
               >
                 <span>🌐</span>
-                {t('actions.live')}
+                {t('projects.actions.live')}
               </a>
             )}
             
@@ -134,7 +134,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectId }) => {
               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-700/50 text-white text-sm hover:bg-gray-600/50 transition-all duration-200 flex-1 justify-center min-w-[100px] border border-gray-600/50"
             >
               <span>💻</span>
-              {t('actions.github')}
+              {t('projects.actions.github')}
             </a>
           </div>
         </div>
