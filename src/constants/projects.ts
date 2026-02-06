@@ -119,7 +119,7 @@ export const PROJECTS_REGISTRY: Record<ProjectId, Omit<Project, 'title' | 'descr
   },
   [ProjectId.PIC_PERFECT]: {
     id: ProjectId.PIC_PERFECT,
-    image: "/projects/picPerfectpro.webp",
+    image: "/projects/picperfectpro.webp",
     live: "https://tanveer-pic-perfect-pro.vercel.app/",
     github: "https://github.com/Tanveer-G/pic-perfect-pro",
     featured: false,
