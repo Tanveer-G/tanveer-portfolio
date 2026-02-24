@@ -19,6 +19,10 @@
       "close": "Close Demo"
     },
     "projectsList": {
+      "docuchat-ai": {
+        "title": "DocuChat AI RAG - powered PDF chat app",
+        "description": "A PDF chat application that lets you upload documents and ask questions, with cited page references and transparent source tracking."
+      },
       "good-news": {
         "title": "Good News PWA: Filters & Bookmarks",
         "description": "Good News PWA provides an intuitive news browsing experience with advanced filtering, search, bookmarking, and infinite scrolling features. The app is optimized for performance and includes a smooth scroll-to-top function for effortless navigation across news articles."

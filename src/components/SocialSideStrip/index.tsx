@@ -29,7 +29,7 @@ export default function SocialSideStrip() {
         <a
           aria-label="GitHub"
           className="flex h-11 w-11 transform items-center justify-center rounded-md bg-[#071022] text-white transition hover:scale-105"
-          href="https://github.com/Tanveer-G/tanveer-portfolio"
+          href="https://github.com/Tanveer-G/"
         >
           <svg
             stroke="currentColor"

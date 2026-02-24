@@ -78,6 +78,7 @@ import { Project } from '@/src/types/project';
 
 // Project IDs as enum for type safety
 export enum ProjectId {
+  DOCUCHAT_AI = 'docuchat-ai',
   GOOD_NEWS = 'good-news',
   PAYFORM_PRO = 'payform-pro',
   ZIPSEARCH = 'zipsearch',
@@ -89,6 +90,15 @@ export enum ProjectId {
 
 // Single source of truth for all non-translatable project data
 export const PROJECTS_REGISTRY: Record<ProjectId, Omit<Project, 'title' | 'description'>> = {
+    [ProjectId.DOCUCHAT_AI]: {
+    id: ProjectId.DOCUCHAT_AI,
+    image: "/projects/docuchat.webp",
+    live: "https://tanveer-docuchat-ai.vercel.app/",
+    github: "https://github.com/Tanveer-G/DocuChat-AI-RAG-powered-PDF-chat-app/tree/main",
+    featured: true,
+    techStack: ["Supabase", "pgVector", "Hugging Face", "langchain", "openrouter"],
+    categories: ["AI", "RAG", "chat"]
+  },
   [ProjectId.GOOD_NEWS]: {
     id: ProjectId.GOOD_NEWS,
     image: "/projects/goodnews.webp",
