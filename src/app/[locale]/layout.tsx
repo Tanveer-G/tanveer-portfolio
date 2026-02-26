@@ -74,7 +74,7 @@ if (!hasLocale(routing.locales, locale)) {
           <NextIntlClientProvider messages={messages}>
             <Header />
             {/* content-Wrapper */}
-            <main className="px-0 md:px-10 lg:px-12">{children}</main>
+            <main className="px-0 md:px-6 lg:px-12">{children}</main>
           </NextIntlClientProvider>
         </div>
       </body>

@@ -16,7 +16,9 @@
       "title": "Project Demo",
       "watchDemo": "Watch Demo Video",
       "loading": "Loading video...",
-      "close": "Close Demo"
+      "close": "Close Demo",
+      "pressEsc": "Press ESC to close",
+      "error": "Failed to load video"
     },
     "projectsList": {
       "docuchat-ai": {
