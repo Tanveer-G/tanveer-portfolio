@@ -1,5 +1,3 @@
-import { track as vercelTrack } from '@vercel/analytics';
-
 /**
  * ============================================
  * Analytics Configuration
@@ -26,7 +24,6 @@ function shouldSample(): boolean {
  * ============================================
  * Add ALL allowed analytics events here.
  */
-
 export type AnalyticsEventMap = {
   // Project card impression (visible >= 400ms)
   project_impression: {
@@ -71,7 +68,7 @@ export type AnalyticsEventMap = {
   video_complete: {
     projectId: string | number;
     duration: number;
-    watchedMs: number; 
+    watchedMs: number;
   };
 
   video_close: {
@@ -85,44 +82,107 @@ export type AnalyticsEventMap = {
   video_error: {
     projectId: string | number;
   };
-};
 
-/**
- * Infer the second parameter type accepted by vercelTrack.
- * This avoids importing internal types from the package.
- */
-type VercelTrackProps =
-  Parameters<typeof vercelTrack> extends [any, infer P]
-    ? P
-    : Record<string, any>;
+   social_click: {
+    platform: 'linkedin' | 'github' | 'contact';
+    url: string;
+    location: 'sidebar';
+  };
+
+   hero_click: {
+    button: 'work' | 'contact';
+    url: string;
+  };
+
+  nav_click: {
+    item: 'work' | 'experience' | 'about' | 'hire'; // 'hire' for the Hire Me button
+    url: string;
+  };
+
+  mobile_menu_click: {
+    item: 'work' | 'about' | 'services' | 'contact' | 'hire';
+    url: string;
+  };
+
+  // Mobile menu close
+  mobile_menu_close: Record<string, never>;
+
+   // Contact form events
+  contact_form_attempt: Record<string, never>;
+  contact_form_success: Record<string, never>;
+  contact_form_error: {
+    reason: 'validation' | 'api_error' | 'network' | 'brevo_api' | 'server_config' | 'server_exception';
+  };
+
+
+};
 
 /**
  * ============================================
  * Main Tracking Function
  * ============================================
+ * Sends event to our internal API endpoint.
  */
-
-export function trackEvent<K extends keyof AnalyticsEventMap>(
+export async function trackEvent<K extends keyof AnalyticsEventMap>(
   name: K,
   props: AnalyticsEventMap[K]
-): void {
+): Promise<void> {
   try {
     if (!shouldSample()) return;
 
-    if (typeof vercelTrack === 'function') {
-      vercelTrack(
-        name as string,
-        props as unknown as VercelTrackProps
-      );
-      return;
+    // In development, log events for debugging
+    if (process.env.NODE_ENV === 'development') {
+      console.debug('[trackEvent]', name, props);
+      // Optional: still send in dev if you want to test
+      // return; // Uncomment to disable sending in dev
     }
 
-    // Dev fallback
-    // if (process.env.NODE_ENV !== 'production') {
-        console.debug('[trackEvent fallback]', name, props);
-    // }
+    // Use sendBeacon if available for page unload events, otherwise fallback to fetch
+    const payload = JSON.stringify({ name, props });
+    const url = '/api/analytics';
+
+    if (navigator?.sendBeacon) {
+      const blob = new Blob([payload], { type: 'application/json' });
+      navigator.sendBeacon(url, blob);
+    } else {
+      // For modern browsers, fetch with keepalive ensures the request completes
+      await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload,
+        keepalive: true, // Important for events during page unload
+      }).catch(() => {
+        // Silently fail – analytics never blocks the app
+      });
+    }
   } catch (error) {
     // Analytics should NEVER break the app
     console.warn('trackEvent error:', error);
   }
+}
+
+
+
+export function trackHeroClick(button: 'work' | 'contact') {
+  trackEvent('hero_click', { button, url: `/${button}` });
+}
+
+export function trackSocialClick(
+  platform: 'linkedin' | 'github' | 'contact',
+  url: string,
+  location: 'sidebar' = 'sidebar'
+) {
+  trackEvent('social_click', { platform, url, location });
+}
+
+export function trackNavClick(item: 'work' | 'experience' | 'about' | 'hire', url: string) {
+  trackEvent('nav_click', { item, url });
+}
+
+export function trackMobileMenuClick(item: 'work' | 'about' | 'services' | 'contact' | 'hire', url: string) {
+  trackEvent('mobile_menu_click', { item, url });
+}
+
+export function trackMobileMenuClose() {
+  trackEvent('mobile_menu_close', {});
 }

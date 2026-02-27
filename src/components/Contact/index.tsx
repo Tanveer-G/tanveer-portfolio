@@ -273,6 +273,7 @@
 // mail lite
 
 "use client";
+import { trackEvent } from "@/lib/analytics";
 import { useState, useCallback, FormEvent, ChangeEvent } from "react";
 
 const ContactForm = () => {
@@ -326,103 +327,46 @@ const ContactForm = () => {
     []
   );
 
-  // Form submission handler with MailerLite integration
-//   const handleSubmit = useCallback(
-//     async (e: FormEvent) => {
-//       e.preventDefault();
-//       if (!validateForm()) return;
+  
+const handleSubmit = useCallback(async (e: FormEvent) => {
+  e.preventDefault();
+  if (!validateForm()) return;
 
-//       setIsSubmitting(true);
-//       try {
-//         // MailerLite API integration
-//         const response = await fetch('https://api.mailerlite.com/api/v2/subscribers', {
-//           method: 'POST',
-//           headers: {
-//             'Content-Type': 'application/json',
-//             'X-MailerLite-ApiKey': process.env.NEXT_PUBLIC_MAILERLITE_API_KEY!,
-//           },
-//           body: JSON.stringify({
-//             email: formData.email,
-//             name: formData.name,
-//             fields: {
-//               subject: formData.subject,
-//               message: formData.message,
-//               // source: 'portfolio-contact-form'
-//             }
-//           }),
-//         });
+  trackEvent('contact_form_attempt', {});
 
-//         if (!response.ok) {
-//           throw new Error(`MailerLite API error: ${response.status}`);
-//         }
+  setIsSubmitting(true);
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
 
-//         setSubmitSuccess(true);
-//         setFormData({ name: "", email: "", subject: "", message: "" });
-//         setTimeout(() => setSubmitSuccess(false), 5000);
-//       } catch (error) {
-//         console.error('Form submission error:', error);
-//         setErrors({ form: "Failed to send message. Please try again." });
-//       } finally {
-//         setIsSubmitting(false);
-//       }
-//     },
-//     [validateForm, formData]
-//   );
+    const data = await response.json();
 
-// Form submission handler with Brevo API integration
-const handleSubmit = useCallback(
-  async (e: FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-    try {
-      // Brevo API integration
-      const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'accept': 'application/json',
-          'api-key': process.env.NEXT_PUBLIC_BREVO_API_KEY!,
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          "sender": {
-            "name": "Tanveer's Portfolio", // 👈 Sender's display name
-            "email": "e.service.center1@gmail.com" // 👈 MUST be a verified sender in Brevo
-          },
-          "to": [{
-            "email": "e.service.center1@gmail.com", // 👈 CORRECT: Your receiving email
-            "name": "Tanveer" // 👈 CORRECT: Your name
-          }],
-          "subject": `Portfolio Contact: ${formData.subject}`,
-          "htmlContent": `
-            <h3>New Message from Portfolio</h3>
-            <p><strong>From:</strong> ${formData.name} &lt;${formData.email}&gt;</p>
-            <p><strong>Subject:</strong> ${formData.subject}</p>
-            <p><strong>Message:</strong></p>
-            <p>${formData.message.replace(/\n/g, '<br>')}</p>
-          `
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Brevo API error:', errorData);
-        throw new Error(`Sending failed (Status: ${response.status})`);
+    if (!response.ok) {
+      if (data.errors) {
+        setErrors(data.errors);
+      } else {
+        setErrors({ form: data.error || 'Failed to send message' });
       }
-
-      setSubmitSuccess(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setSubmitSuccess(false), 5000);
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setErrors({ form: "Failed to send the message. Please try again." });
-    } finally {
-      setIsSubmitting(false);
+      trackEvent('contact_form_error', { reason: response.status === 400 ? 'validation' : 'api_error' });
+      return;
     }
-  },
-  [validateForm, formData]
-);
+
+    // Success
+    setSubmitSuccess(true);
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    trackEvent('contact_form_success', {});
+    setTimeout(() => setSubmitSuccess(false), 5000);
+  } catch (error) {
+    console.error('Form submission error:', error);
+    setErrors({ form: 'Failed to send the message. Please try again.' });
+    trackEvent('contact_form_error', { reason: 'network' });
+  } finally {
+    setIsSubmitting(false);
+  }
+}, [validateForm, formData]);
 
   return (
     <section
