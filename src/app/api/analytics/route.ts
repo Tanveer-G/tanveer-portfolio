@@ -25,13 +25,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
          Authorization: `Bearer ${ANALYTICS_API_KEY}`,
       },
-      body: JSON.stringify({
-        event: name,
-        properties: props,
-        timestamp: new Date().toISOString(),
-        // You can also add additional metadata like user agent, IP, etc.
-        // Be careful with privacy and PII.
-      }),
+      body: JSON.stringify(body)
     });
 
     if (!response.ok) {

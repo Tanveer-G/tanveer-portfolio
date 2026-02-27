@@ -9,7 +9,7 @@
  */
 
 const SAMPLE_RATE = Number(
-  process.env.NEXT_PUBLIC_ANALYTICS_SAMPLE_RATE ?? '1'
+  process.env.NEXT_PUBLIC_ANALYTICS_SAMPLE_RATE ?? '1',
 );
 
 function shouldSample(): boolean {
@@ -83,13 +83,13 @@ export type AnalyticsEventMap = {
     projectId: string | number;
   };
 
-   social_click: {
+  social_click: {
     platform: 'linkedin' | 'github' | 'contact';
     url: string;
     location: 'sidebar';
   };
 
-   hero_click: {
+  hero_click: {
     button: 'work' | 'contact';
     url: string;
   };
@@ -107,14 +107,18 @@ export type AnalyticsEventMap = {
   // Mobile menu close
   mobile_menu_close: Record<string, never>;
 
-   // Contact form events
+  // Contact form events
   contact_form_attempt: Record<string, never>;
   contact_form_success: Record<string, never>;
   contact_form_error: {
-    reason: 'validation' | 'api_error' | 'network' | 'brevo_api' | 'server_config' | 'server_exception';
+    reason:
+      | 'validation'
+      | 'api_error'
+      | 'network'
+      | 'brevo_api'
+      | 'server_config'
+      | 'server_exception';
   };
-
-
 };
 
 /**
@@ -125,20 +129,30 @@ export type AnalyticsEventMap = {
  */
 export async function trackEvent<K extends keyof AnalyticsEventMap>(
   name: K,
-  props: AnalyticsEventMap[K]
+  props: AnalyticsEventMap[K],
 ): Promise<void> {
   try {
     if (!shouldSample()) return;
 
     // In development, log events for debugging
+    console.debug('[trackEvent]', name, props);
     if (process.env.NODE_ENV === 'development') {
-      console.debug('[trackEvent]', name, props);
       // Optional: still send in dev if you want to test
       // return; // Uncomment to disable sending in dev
     }
 
     // Use sendBeacon if available for page unload events, otherwise fallback to fetch
-    const payload = JSON.stringify({ name, props });
+
+    const payload = JSON.stringify({
+      name,
+      domain: window?.location.hostname,
+      emoji: '📊',
+      properties: {
+        ...props,
+        url: window?.location.href,
+        timestamp: new Date().toISOString(),
+      },
+    });
     const url = '/api/analytics';
 
     if (navigator?.sendBeacon) {
@@ -161,8 +175,6 @@ export async function trackEvent<K extends keyof AnalyticsEventMap>(
   }
 }
 
-
-
 export function trackHeroClick(button: 'work' | 'contact') {
   trackEvent('hero_click', { button, url: `/${button}` });
 }
@@ -170,16 +182,22 @@ export function trackHeroClick(button: 'work' | 'contact') {
 export function trackSocialClick(
   platform: 'linkedin' | 'github' | 'contact',
   url: string,
-  location: 'sidebar' = 'sidebar'
+  location: 'sidebar' = 'sidebar',
 ) {
   trackEvent('social_click', { platform, url, location });
 }
 
-export function trackNavClick(item: 'work' | 'experience' | 'about' | 'hire', url: string) {
+export function trackNavClick(
+  item: 'work' | 'experience' | 'about' | 'hire',
+  url: string,
+) {
   trackEvent('nav_click', { item, url });
 }
 
-export function trackMobileMenuClick(item: 'work' | 'about' | 'services' | 'contact' | 'hire', url: string) {
+export function trackMobileMenuClick(
+  item: 'work' | 'about' | 'services' | 'contact' | 'hire',
+  url: string,
+) {
   trackEvent('mobile_menu_click', { item, url });
 }
 
