@@ -1,25 +1,5 @@
 /**
  * ============================================
- * Analytics Configuration
- * ============================================
- * Set NEXT_PUBLIC_ANALYTICS_SAMPLE_RATE in .env
- * Example:
- * NEXT_PUBLIC_ANALYTICS_SAMPLE_RATE=1     // 100%
- * NEXT_PUBLIC_ANALYTICS_SAMPLE_RATE=0.5   // 50%
- */
-
-const SAMPLE_RATE = Number(
-  process.env.NEXT_PUBLIC_ANALYTICS_SAMPLE_RATE ?? '1',
-);
-
-function shouldSample(): boolean {
-  if (SAMPLE_RATE >= 1) return true;
-  if (SAMPLE_RATE <= 0) return false;
-  return Math.random() < SAMPLE_RATE;
-}
-
-/**
- * ============================================
  * Typed Event Map (Single Source of Truth)
  * ============================================
  * Add ALL allowed analytics events here.
@@ -132,13 +112,8 @@ export async function trackEvent<K extends keyof AnalyticsEventMap>(
   props: AnalyticsEventMap[K],
 ): Promise<void> {
   try {
-    if (!shouldSample()) return;
-
-    // In development, log events for debugging
-    console.debug('[trackEvent]', name, props);
     if (process.env.NODE_ENV === 'development') {
-      // Optional: still send in dev if you want to test
-      // return; // Uncomment to disable sending in dev
+      console.debug('[trackEvent]', name, props);
     }
 
     // Use sendBeacon if available for page unload events, otherwise fallback to fetch
@@ -146,12 +121,12 @@ export async function trackEvent<K extends keyof AnalyticsEventMap>(
     const payload = JSON.stringify({
       name,
       domain: window?.location.hostname,
-      emoji: '📊',
       properties: {
         ...props,
         url: window?.location.href,
         timestamp: new Date().toISOString(),
       },
+      emoji: '📊',
     });
     const url = '/api/analytics';
 

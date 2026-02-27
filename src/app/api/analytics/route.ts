@@ -1,60 +1,36 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
-// Configuration – set these in your environment variables
-const ANALYTICS_ENDPOINT = 'https://getanalyzr.vercel.app/api/events'; // Adjust if needed
-const ANALYTICS_API_KEY = process.env.ANALYTICS_API_KEY; // Optional, if required
+const ANALYZR_API_URL = "https://getanalyzr.vercel.app/api/events";
+const ANALYZR_API_KEY = process.env.ANALYZR_API_KEY;
 
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
+  if (!ANALYZR_API_KEY) {
+    console.error("ANALYZR_API_KEY is not configured");
+    return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
+  }
+
   try {
-    // Parse the incoming event
     const body = await request.json();
-    const { name, props } = body;
 
-    // Basic validation
-    if (!name || !props) {
-      return NextResponse.json(
-        { error: 'Missing name or props' },
-        { status: 400 }
-      );
-    }
-
-    // Forward to the external analytics service
-    const response = await fetch(ANALYTICS_ENDPOINT, {
-      method: 'POST',
+    const response = await fetch(ANALYZR_API_URL, {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-         Authorization: `Bearer ${ANALYTICS_API_KEY}`,
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${ANALYZR_API_KEY}`,
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify(body),
     });
 
     if (!response.ok) {
-      // Log server-side but don't expose error to client
-      console.error('Analytics forward failed:', await response.text());
-      return NextResponse.json(
-        { error: 'Failed to forward analytics' },
-        { status: 500 }
-      );
+      const errorText = await response.text();
+      console.error("Analyzr API error:", errorText);
+      return NextResponse.json({ error: "Analyzr request failed" }, { status: response.status });
     }
 
-    return NextResponse.json({ success: true });
+    const data = await response.json();
+    return NextResponse.json(data);
   } catch (error) {
-    console.error('Analytics API error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    console.error("Analytics proxy error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
-}
-
-// Optional: handle preflight requests if needed
-export async function OPTIONS() {
-  return new NextResponse(null, {
-    status: 204,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
 }
