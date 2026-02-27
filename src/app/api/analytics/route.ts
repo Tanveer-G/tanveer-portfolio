@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Configuration – set these in your environment variables
-const ANALYTICS_ENDPOINT = process.env.ANALYTICS_ENDPOINT || 'https://getanalyzr.vercel.app/api/events'; // Adjust if needed
+const ANALYTICS_ENDPOINT = 'https://getanalyzr.vercel.app/api/events'; // Adjust if needed
 const ANALYTICS_API_KEY = process.env.ANALYTICS_API_KEY; // Optional, if required
 
 export async function POST(request: NextRequest) {
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...(ANALYTICS_API_KEY && { 'Authorization': `Bearer ${ANALYTICS_API_KEY}` }),
+         Authorization: `Bearer ${ANALYTICS_API_KEY}`,
       },
       body: JSON.stringify({
         event: name,

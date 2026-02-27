@@ -10,7 +10,6 @@ import '@/src/styles/theme.css';
 import '@/src/styles/typo.css';
 
 import { Space_Grotesk, Inter } from 'next/font/google';
-import Script from 'next/script';
 
 // Space Grotesk for headings (only bold weight)
 export const spaceGrotesk = Space_Grotesk({
@@ -69,11 +68,7 @@ export default async function RootLayout({ children, params }: Props) {
           </NextIntlClientProvider>
         </div>
       </body>
-      <Script
-        defer
-        data-domain="tanveer-portfolio.vercel.app"
-        src="https://getanalyzr.vercel.app/tracking-script.js"
-      />
+
     </html>
   );
 }
