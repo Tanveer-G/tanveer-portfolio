@@ -25,6 +25,10 @@
         "title": "DocuChat AI RAG - powered PDF chat app",
         "description": "A PDF chat application that lets you upload documents and ask questions, with cited page references and transparent source tracking."
       },
+      "task-board": {
+        "title": "Team Task Board: (Mini Jira)",
+        "description": "Multi-tenant SaaS frontend with Supabase auth (password + magic link), realtime sync, RLS, TanStack Query caching, Zustand, mobile-first responsive UI, and GTM analytics."
+      },
       "good-news": {
         "title": "Good News PWA: Filters & Bookmarks",
         "description": "Good News PWA provides an intuitive news browsing experience with advanced filtering, search, bookmarking, and infinite scrolling features. The app is optimized for performance and includes a smooth scroll-to-top function for effortless navigation across news articles."

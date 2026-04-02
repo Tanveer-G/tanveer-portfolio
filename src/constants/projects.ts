@@ -85,7 +85,8 @@ export enum ProjectId {
   PIC_PERFECT = 'pic-perfect',
   PORTFOLIO = 'portfolio',
   WEATHER_APP = 'weather-app',
-  BLOCKBUSTER = 'blockbuster'
+  BLOCKBUSTER = 'blockbuster',
+  TASK_BOARD= 'task-board'
 }
 
 // Single source of truth for all non-translatable project data
@@ -99,15 +100,15 @@ export const PROJECTS_REGISTRY: Record<ProjectId, Omit<Project, 'title' | 'descr
     techStack: ["Supabase", "pgVector", "Hugging Face", "langchain", "openrouter"],
     categories: ["AI", "RAG", "chat"]
   },
-  [ProjectId.GOOD_NEWS]: {
-    id: ProjectId.GOOD_NEWS,
-    image: "/projects/goodnews.webp",
-    video: "/projects/video/good-news.mp4",
-    live: "https://tanveer-goodnews.vercel.app/",
-    github: "https://github.com/Tanveer-G/GoodNewsPWA-FiltersAndBookmark",
+    [ProjectId.TASK_BOARD]: {
+    id: ProjectId.TASK_BOARD,
+    image: "/projects/taskboard.webp",
+    // video: "/projects/video/good-news.mp4",
+    live: "https://th-task-board.netlify.app/",
+    github: "https://github.com/Tanveer-G/",
     featured: true,
-    techStack: ["Next.js", "Tailwind CSS", "SWR", "Context API", "Next-PWA"],
-    categories: ["pwa", "nextjs", "news"]
+    techStack: ["SupaBase", "RLS", "zustand", "TanStack Query", "Realtime"],
+    categories: ["supabase", "nextjs", "postgres"]
   },
   [ProjectId.PAYFORM_PRO]: {
     id: ProjectId.PAYFORM_PRO,
@@ -117,6 +118,16 @@ export const PROJECTS_REGISTRY: Record<ProjectId, Omit<Project, 'title' | 'descr
     featured: true,
     techStack: ["React", "Redux", "Razorpay API"],
     categories: ["react", "payments", "commerce"]
+  },
+    [ProjectId.GOOD_NEWS]: {
+    id: ProjectId.GOOD_NEWS,
+    image: "/projects/goodnews.webp",
+    video: "/projects/video/good-news.mp4",
+    live: "https://tanveer-goodnews.vercel.app/",
+    github: "https://github.com/Tanveer-G/GoodNewsPWA-FiltersAndBookmark",
+    featured: true,
+    techStack: ["Next.js", "Tailwind CSS", "SWR", "Context API", "Next-PWA"],
+    categories: ["pwa", "nextjs", "news"]
   },
   [ProjectId.ZIPSEARCH]: {
     id: ProjectId.ZIPSEARCH,
