@@ -31,14 +31,15 @@ export const metadata: Metadata = {
       "3+ years building production apps with React, Next.js, and TypeScript.",
     type: "website",
     locale: "en_US",
+    images: ['/projects/og.webp'],
   },
   twitter: {
     card: "summary_large_image",
     title: "Tanveer H. — Full Stack Developer",
     description:
-      "3+ years building fast, reactive web apps with React, Next.js, TypeScript.",
+    "3+ years building fast, reactive web apps with React, Next.js, TypeScript.",
+    images: ['/projects/og.webp'],
   },
-  images: ['/projects/og.webp'],
   robots: { index: true, follow: true },
 };
 
