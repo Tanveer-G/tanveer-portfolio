@@ -1,6 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import ClarityProvider from './Clarity'
 
 // Lazy load heavy client components (they will never run on server)
 const SmoothScroll = dynamic(() => import('@/components/client/SmoothScroll'), { ssr: false })
@@ -16,6 +17,8 @@ const Impact = dynamic(() => import('@/components/client/Impact'), { ssr: false 
 const Contact = dynamic(() => import('@/components/client/Contact'), { ssr: false })
 const Resume = dynamic(() => import('@/components/client/Resume'), { ssr: false })
 const Footer = dynamic(() => import('@/components/client/Footer'), { ssr: false })
+
+
 
 export default function ClientWrapper() {
   return (
@@ -43,6 +46,7 @@ export default function ClientWrapper() {
         <div className="dv" />
       </main>
       <Footer />
+      <ClarityProvider />
     </>
   )
 }

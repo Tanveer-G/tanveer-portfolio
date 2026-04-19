@@ -12,16 +12,16 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: 'DocuChat AI RAG - powered PDF chat app',
-    desc: 'A PDF chat application that lets you upload documents and ask questions, with cited page references and transparent source tracking.',
-    tech: ['Supabase', 'pgVector', 'Hugging Face', 'langchain', 'openrouter'],
-    img: '/projects/docuchat.webp',
-    live: 'https://tanveer-docuchat-ai.vercel.app/',
-    gh: 'https://github.com/Tanveer-G/DocuChat-AI-RAG-powered-PDF-chat-app/tree/main',
+    title: 'Curalink: AI Medical Research Assistant',
+    desc: 'Transparent AI pipeline for medical research. Retrieves, ranks, and synthesizes insights from PubMed, OpenAlex, and ClinicalTrials.gov.',
+    tech: ['MERN', 'React', 'Node.js', 'Express', 'MongoDB', 'OpenRouter', 'HuggingFace', 'SSE'],
+    img: '/projects/curalink.webp',
+    live: 'https://curalink-search.vercel.app',
+    gh: 'https://github.com/Tanveer-G/Curalink-AI-Medical-Research-Assistant-Backend',
   },
   {
     id: 2,
-    title: 'Team Task Board: (Mini Jira)',
+    title: 'Team Task Board (Mini Jira)',
     desc: 'Multi-tenant SaaS frontend with Supabase auth (password + magic link), realtime sync, RLS, TanStack Query caching, Zustand, mobile-first responsive UI, and GTM analytics.',
     tech: ['Supabase', 'RLS', 'zustand', 'TanStack Query', 'Realtime'],
     img: '/projects/task-board.webp',
@@ -30,6 +30,15 @@ export const PROJECTS: Project[] = [
   },
     {
     id: 3,
+    title: 'DocuChat AI RAG - powered PDF chat app',
+    desc: 'A PDF chat application that lets you upload documents and ask questions, with cited page references and transparent source tracking.',
+    tech: ['Supabase', 'pgVector', 'Hugging Face', 'langchain', 'openrouter'],
+    img: '/projects/docuchat.webp',
+    live: 'https://tanveer-docuchat-ai.vercel.app/',
+    gh: 'https://github.com/Tanveer-G/DocuChat-AI-RAG-powered-PDF-chat-app/tree/main',
+  },
+    {
+    id: 4,
     title: 'PayForm Pro: Modular Razorpay Integration',
     desc: 'PayForm Pro streamlines payment integration by offering a modular solution for secure form submissions and payment processing. It features a user-friendly frontend, robust backend API routes, and efficient data management with MongoDB.',
     tech: ['React', 'Redux', 'Razorpay API'],
@@ -38,7 +47,7 @@ export const PROJECTS: Project[] = [
     gh: 'https://github.com/Tanveer-G/payFormPro-ModularRazorPayIntegration',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Good News PWA: Filters & Bookmarks',
     desc: 'Good News PWA provides an intuitive news browsing experience with advanced filtering, search, bookmarking, and infinite scrolling features. The app is optimized for performance and includes a smooth scroll-to-top function for effortless navigation across news articles.',
     tech: ['Next.js', 'Tailwind CSS', 'SWR', 'Context API', 'Next-PWA'],
@@ -47,7 +56,7 @@ export const PROJECTS: Project[] = [
     gh: 'https://github.com/Tanveer-G/GoodNewsPWA-FiltersAndBookmark',
   },
   {
-    id: 5,
+    id: 6,
     title: 'ZipSearch: Postal Code Information App',
     desc: 'ZipSearch is an interactive platform for exploring global postal code data. Leveraging the Zippopotam API, the app delivers seamless access to location-based information for data-driven searches.',
     tech: ['React', 'Tailwind CSS', 'React-Query', 'React-Country-Flag', 'Vite', 'Zippopotam API'],
@@ -56,7 +65,7 @@ export const PROJECTS: Project[] = [
     gh: 'https://github.com/Tanveer-G/ZipSearch-PostalCode-Information',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Pic Perfect: Realtime Image Optimization App',
     desc: 'Pic Perfect is a web application designed for real-time image optimization. It enables users to efficiently manipulate and optimize images, ensuring a fast and seamless experience.',
     tech: ['TypeScript', 'Next.js', 'Sharp'],
@@ -65,7 +74,7 @@ export const PROJECTS: Project[] = [
     gh: 'https://github.com/Tanveer-G/pic-perfect-pro',
   },
   {
-    id: 7,
+    id: 8,
     title: 'Geo-Targeted Portfolio App: Multilingual & SEO-Optimized',
     desc: "Tanveer's Portfolio is a multilingual and SEO-optimized web app that showcases skills, projects, and achievements. Built with modern technologies, it offers an engaging and accessible experience for diverse audiences.",
     tech: ['Next.js', 'next-i18next', 'Framer Motion', 'React Icons', 'Swiper', 'TSParticles', 'Google Analytics'],
@@ -73,15 +82,15 @@ export const PROJECTS: Project[] = [
     live: 'https://tanveer-portfolio.vercel.app/',
     gh: 'https://github.com/Tanveer-G/tanveer-portfolio',
   },
-  {
-    id: 8,
-    title: 'Best Weather App',
-    desc: 'Best Weather App delivers real-time weather updates with dynamic visuals that change based on current conditions. It offers accurate live data with an engaging interface.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Weather API'],
-    img: '/projects/best-weather.webp',
-    live: '#',  // No live URL provided – update when available
-    gh: 'https://github.com/Tanveer-G',
-  },
+  // {
+  //   id: 9,
+  //   title: 'Best Weather App',
+  //   desc: 'Best Weather App delivers real-time weather updates with dynamic visuals that change based on current conditions. It offers accurate live data with an engaging interface.',
+  //   tech: ['HTML', 'CSS', 'JavaScript', 'Weather API'],
+  //   img: '/projects/best-weather.webp',
+  //   live: '#',  // No live URL provided – update when available
+  //   gh: 'https://github.com/Tanveer-G',
+  // },
   {
     id: 9,
     title: 'Block Buster: Movie Reviews & Filters',

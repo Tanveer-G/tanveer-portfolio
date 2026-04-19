@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ClarityProvider from "@/components/client/Clarity";
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
@@ -39,6 +38,7 @@ export const metadata: Metadata = {
     description:
       "3+ years building fast, reactive web apps with React, Next.js, TypeScript.",
   },
+  images: ['/projects/og.webp'],
   robots: { index: true, follow: true },
 };
 
@@ -59,8 +59,6 @@ export default function RootLayout({
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         )}
 
-        {/* Custom tracking script */}
-        <ClarityProvider />
       </body>
     </html>
   );
