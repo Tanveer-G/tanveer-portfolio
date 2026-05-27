@@ -166,6 +166,7 @@ export default function Projects() {
                       {/* Live demo link - larger touch target */}
                       <a
                         href={p.live}
+                        target="_blank"
                         title="Live demo"
                         className="inline-flex items-center justify-center w-10 h-10 rounded-lg transition-colors"
                         style={{ color: "rgba(237,224,240,.35)" }}
@@ -196,6 +197,7 @@ export default function Projects() {
                       {/* GitHub link - larger touch target */}
                       <a
                         href={p.gh}
+                        target="_blank"
                         title="GitHub"
                         className="inline-flex items-center justify-center w-10 h-10 rounded-lg transition-colors"
                         style={{ color: "rgba(237,224,240,.35)" }}

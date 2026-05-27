@@ -25,6 +25,7 @@ export default function Resume() {
           </p>
           <a
             href="/tanveer-h-resume.pdf"
+            target="_blank"
             download="tanveer-h-resume.pdf"
             onClick={handleClick}
             className="btn-p inline-flex items-center gap-3 px-7 py-3.5 rounded-2xl font-semibold text-sm"
