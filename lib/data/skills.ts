@@ -48,6 +48,7 @@ export const SKILLS: Skill[] = [
   { n: 'hls.js',         e: '📹', c: 'Tools & Libs',   i: 'HLS streaming · 5centsCDN' },
   { n: 'Swiper',         e: '🔄', c: 'Tools & Libs',   i: 'Touch-enabled carousels' },
   { n: 'React Select',   e: '☰',  c: 'Tools & Libs',   i: 'Advanced dropdowns' },
+  { n: 'ReactFlow (xyflow)',   e: '☰',  c: 'Tools & Libs',   i: 'Advanced dropdowns' },
   { n: 'jsvectormap',    e: '🗺',  c: 'Tools & Libs',   i: 'Interactive maps at 5centsCDN' },
   // DevOps & Cloud
   { n: 'AWS',            e: '☁',  c: 'DevOps & Cloud', i: 'EC2, ECS · DocuChat AI deployment' },
